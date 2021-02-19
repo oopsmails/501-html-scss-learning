@@ -7,6 +7,16 @@
 ### Plugins
 
 - Live Sass Compiler (Live Server plugin will also be installed along with this)
+- Click on the bottom right coner tool bar to enalbe/disable watching
+
+
+## Knowledge
+
+### Mixins
+
+- Normally, don't use Mixins without arguments.
+
+
 
 
 ## References:
