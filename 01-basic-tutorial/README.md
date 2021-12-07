@@ -9,6 +9,9 @@
 - Live Sass Compiler (Live Server plugin will also be installed along with this)
 - Click on the bottom right coner tool bar to enalbe/disable watching
 
+### Run
+
+right click *index.html*, "Open with live server"
 
 ## Knowledge
 
