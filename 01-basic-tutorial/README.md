@@ -4,6 +4,14 @@
 
 https://www.youtube.com/watch?v=D-h8L5hgW-w&list=RDCMUCVyRiMvfUNMA1UPlDPzG5Ow&start_radio=1
 
+
+- Figma
+
+https://www.figma.com/  
+
+oopsmails@gmail
+
+
 ## Setup
 
 ### VS Code
