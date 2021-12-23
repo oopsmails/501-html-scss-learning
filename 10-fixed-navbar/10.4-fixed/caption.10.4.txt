@@ -1,0 +1,2088 @@
+00:00
+the very first video I ever made here on
+00:02
+YouTube was on how to make a navbar with
+00:04
+a cool little hover effect and I really
+00:07
+liked that video and it's actually my
+00:09
+most popular video which is kind of cool
+00:11
+because it was the very first one I ever
+00:13
+did but it's a little bit you know I
+00:16
+used floats and it wasn't responsive I
+00:18
+get lots of questions on that video
+00:20
+about doing some more interesting things
+00:22
+with it so that's exactly what we're
+00:24
+gonna do in this video I'm back it's
+00:30
+been three weeks and honestly I miss
+00:32
+making this video so I'm really happy to
+00:33
+be back real life was just crazy it was
+00:36
+insane now I finally have some time to
+00:38
+breathe in sista and because of that it
+00:44
+also means that I have time to make
+00:45
+these videos again which is great so
+00:48
+thank you for being patient with me if
+00:50
+this is your first video and you didn't
+00:51
+even know I was on a break or you're
+00:53
+watching this in the future yeah well
+00:55
+welcome if you don't already know my
+00:57
+name is Kevin and here at my channel I
+00:58
+make videos where we explore how to make
+01:01
+the web and how to make it look good
+01:02
+while we're at it with a new video every
+01:04
+single week well almost every single
+01:07
+week as it just said it took a little
+01:08
+break but for the most part it's every
+01:10
+single week so as I mentioned my very
+01:12
+first video I made this navbar here that
+01:14
+you can see on the screen and I think it
+01:15
+looks good I really do like it but it's
+01:18
+not responsive as I said and I think it
+01:21
+really could be improved and we're gonna
+01:23
+do a lot of good things to improve it
+01:24
+but I'm not just gonna go back in and
+01:26
+refactor it we're gonna go in and just
+01:27
+rip it all apart and well no we're not
+01:29
+ripping apart we're starting from zero
+01:30
+I'm just gonna start from scratch we're
+01:32
+gonna build it up I'm gonna make it
+01:34
+responsive we're gonna have a nice
+01:35
+little like a clicky box it's gonna go
+01:37
+up and down with no JavaScript so I
+01:38
+think that's gonna be cool we'll throw a
+01:40
+little CSS variable in there for fun
+01:42
+we're gonna be using CSS grid we're
+01:43
+gonna be using flexbox we're gonna be
+01:45
+bringing it to the modern times and
+01:47
+modern CSS that we have now so I will be
+01:50
+looking at a lot of little things along
+01:52
+the way that I've explored in more
+01:54
+detail in my other videos so down in the
+01:56
+description below there'll be links to a
+01:57
+lot of my other videos just ones that go
+02:00
+more in depth on some of the topics that
+02:02
+I'm briefly going over so in this video
+02:04
+even if you're not sure what a CSS
+02:06
+variable is you'll be able to follow
+02:07
+along no problem but if you want more
+02:09
+details on it
+02:10
+they'll be down in the description also
+02:13
+you might notice that it's a longer
+02:15
+video so what I've done is I put
+02:17
+timestamps down in the description as
+02:18
+well I actually ran a poll on whether
+02:20
+you guys would like to have one big long
+02:23
+video or lots of little videos and I was
+02:25
+surprised that it was a pretty even
+02:28
+split the lots of little videos actually
+02:30
+won but I just thought that because it
+02:32
+was so close and because of the the
+02:34
+topic of this video it would make more
+02:36
+sense to have one big long one just with
+02:37
+some timestamps along the way so that's
+02:39
+what we're gonna be doing the way that
+02:40
+works is if you go and look in the
+02:42
+description you'll see the time so
+02:43
+they're actually linked so if you click
+02:44
+on say the the third one down you click
+02:46
+on the little timestamp and it's gonna
+02:48
+bring you exactly to there in the video
+02:50
+so if you don't have time to watch the
+02:52
+whole thing at once that's fine because
+02:54
+you can just come back later on go oh I
+02:56
+was at adding in the pseudo elements and
+02:58
+click on that and it will bring you to
+03:00
+that part of the video right away so
+03:03
+it's little bookmark type II things with
+03:05
+all that out of the way I think it's
+03:06
+time we get into this let's go rock it
+03:08
+now first things first we've got to
+03:10
+write some markup luckily it's pretty
+03:12
+easy to do for this and you'll notice I
+03:14
+am in code pen so the link to this is
+03:16
+down in the description below if you
+03:17
+want to go and check out my code and
+03:19
+play around with it as you follow along
+03:21
+in the video or afterwards I do have a
+03:24
+little bit of something here this is
+03:26
+just a place well there were some actual
+03:27
+content will go so we can see what it
+03:29
+looks like with content once we've built
+03:32
+this out so let's start just by making a
+03:34
+nice big header here close header inside
+03:39
+my header I'm just gonna use an h1 with
+03:41
+a class of logo on it so we can have our
+03:44
+logo which I don't actually have one so
+03:47
+I'm just gonna write logo in there for
+03:49
+now for a little bit of a placeholder
+03:50
+for where we could be putting a logo and
+03:53
+then we need our actual navigation so
+03:55
+I'm gonna come in here and make a nav
+03:58
+close my nav off and we're gonna do this
+04:01
+with an unordered list because this is
+04:04
+what you'll usually find out in the real
+04:06
+world so for this we need a list item
+04:10
+and in our list item we will be putting
+04:13
+in an H ref we have nowhere for it to go
+04:15
+now but hopefully you would actually
+04:17
+have somewhere for this to be going to
+04:18
+and for my H ref the first one can be
+04:21
+home
+04:22
+a and close ally and just to make my
+04:26
+life a little bit easier let's copy this
+04:28
+one and paste it in there a few times we
+04:32
+have a few different links let's say
+04:34
+it's a boat we'll do a blog and we'll do
+04:39
+the contact there we go so the main
+04:47
+reason again with this is just so we can
+04:48
+see what happens sort of when we scroll
+04:50
+so it gives us a bit more of a realistic
+04:51
+look that's why I added this whole
+04:53
+content thing down here and that's it
+04:57
+for the markup it's nice and simple
+04:59
+there so now with that done we can start
+05:01
+codon and up we're going to start with
+05:03
+the mobile view and then we'll move up
+05:05
+to the desktop screen sizes once we're
+05:06
+finished with that so I'm gonna just
+05:09
+take this and we don't actually need to
+05:11
+be looking at this anymore so I'm gonna
+05:12
+bring up my CSS now you'll see that I
+05:14
+have some styling here already so up
+05:18
+here I'm just ringing my Google font
+05:19
+here I'm setting up a CSS custom
+05:22
+property or a CSS variable here at the
+05:24
+top if you've never seen these I do have
+05:27
+a series on how they work but for the
+05:28
+very basics of it you'll very easily be
+05:30
+able to follow along for this video and
+05:32
+once you see me using it I think you'll
+05:34
+quickly understand exactly how it works
+05:38
+here I have a reset for my box sizing
+05:42
+which I do one pretty much all my
+05:44
+projects and then I just have some basic
+05:46
+styles will hit my content section and
+05:48
+just some basic styles here on my body
+05:51
+just so we have somewhere where we're
+05:53
+starting off with so what I'm going to
+05:55
+do is I'm actually going to leave all
+05:56
+that at the top there and then I'm going
+05:58
+to come down here just because I will be
+05:59
+showing this and let's just put in a
+06:01
+little comment comment here saying
+06:04
+navigation Styles start here and we'll
+06:11
+work from here on out so the very first
+06:13
+thing I have here is my header so let's
+06:16
+style that up so I have my header and
+06:17
+right away we're gonna use that variable
+06:21
+that I was just talking about so to use
+06:23
+it I have to write var and then open and
+06:25
+close my parentheses and then I write
+06:27
+the name that I created so background
+06:28
+and you can see that color that I used
+06:31
+where is it right here
+06:33
+so this RGB a value is getting brought
+06:36
+in
+06:36
+right there so this had come in more
+06:39
+handy once we start reusing this or if
+06:41
+we do decide to reuse it in different
+06:44
+places or if we need to change it later
+06:46
+on what else do we need to do I want to
+06:50
+do a text-align:center on this and I'm
+06:56
+going to do a position fixed I've had a
+06:58
+lot of questions about how to do this so
+07:00
+it's nice and easy to position fixed and
+07:03
+then for now I'm just going to do a
+07:04
+width of 100% so now if I scroll you can
+07:09
+see that it stays there and because I'm
+07:11
+using an RGB a value you can see that
+07:13
+there is a little bit of transparency in
+07:15
+there so we can play with that number a
+07:17
+little bit I'm on how transparent you
+07:21
+want it but I think that looks nice now
+07:25
+one thing because this is position fixed
+07:27
+just to make sure that it's always on
+07:29
+top of everything we can give it a
+07:30
+really nice big z-index something like
+07:33
+that and it depends on how you're using
+07:35
+your Zend indexes and everything but a
+07:37
+nice big number just doing ensure that
+07:39
+it's always all the way on top of
+07:41
+everything else so that's good now let's
+07:43
+actually get inside our header so the
+07:45
+very first thing we have is our logo and
+07:47
+because this isn't h1 with some text I'm
+07:49
+going to say that the margin is 0 on it
+07:51
+so actually I don't think I need to
+07:54
+style anything on it but if you wanted
+07:55
+to just know that the space around it
+07:57
+right now is being created by the margin
+07:59
+so it is possible that you might want to
+08:00
+reset that at one point or change the
+08:03
+spacing around it because this is sort
+08:04
+of going to decide on how tall our whole
+08:06
+navigation is since it's the biggest
+08:09
+element inside of my navigation but for
+08:11
+now I'm just gonna not even bother
+08:13
+putting anything so right now it's
+08:15
+starting to look good but my navigation
+08:17
+is in the wrong place what do we want is
+08:18
+to bring it over to the side here
+08:20
+because eventually it will move up and
+08:21
+down with a thing that we're gonna click
+08:23
+on now I haven't done the markup for
+08:24
+that yet I'm saving that for a little
+08:26
+bit after I'm just cuz it's gonna make
+08:28
+more sense once everything is set up to
+08:30
+add that little bit of markup in there
+08:32
+we're almost there - so let's go and
+08:34
+look at my nav first of all so I always
+08:37
+work from the outside in so let's start
+08:39
+with the whole nav itself so I'm going
+08:42
+to use a position:absolute on this so
+08:45
+because this has a position fixed
+08:47
+already on it this position:absolute
+08:48
+will be
+08:49
+relative to where the overall
+08:52
+positioning of this is which will make
+08:55
+my life a little bit easier I'm gonna do
+08:58
+a text-align:left because my text isn't
+09:02
+in the middle it looks weird if it's
+09:05
+centered off on the side here so let's
+09:07
+do a text-align:left on that the tops
+09:11
+already I think at the right spot but
+09:13
+I'm gonna say top 100 percent so again
+09:16
+that's relative to this so if I did like
+09:18
+top 50 percent just to look at it the
+09:21
+top of this well there's a little bit of
+09:24
+margin on the top so of the list itself
+09:28
+but the top of this is lining up pretty
+09:31
+much with the middle of this and I don't
+09:33
+want it to line up in the middle I want
+09:34
+to line up underneath that so that's why
+09:36
+top we're moving a hundred percent away
+09:38
+from the top which is here so a hundred
+09:41
+percent of the way down and then let's
+09:45
+just do a left of zero so I can control
+09:47
+exactly where it's going to be and
+09:49
+you'll say it doesn't look left zero we
+09:51
+do have padding on here as well because
+09:53
+of my nav ul which we'll look at in a
+09:56
+second I think that's all we need on
+09:59
+there so let's keep going and so let's
+10:02
+look at our nav ul next so on my nav ul
+10:06
+what do we need we need to do this is
+10:08
+where the margin:0 padding:0 and I'll do
+10:11
+a list-style:none that gets rid of the
+10:14
+bullet points and all of that and now
+10:16
+you can see it's actually lining up at
+10:17
+the top and it's actually all the way on
+10:19
+the side they're good and now we can do
+10:22
+my nav Li and on my nav li I want to
+10:26
+spread them out so it's at a margin
+10:27
+bottom I don't know one M just to spread
+10:30
+them out a little bit and I'll do a
+10:32
+margin left of one M as well to give it
+10:35
+some space on the side here now this is
+10:37
+where I did I really need to reset this
+10:40
+exactly and this margin here could
+10:44
+actually be up on the UL it just depends
+10:46
+on how you like to work there's no from
+10:50
+I think anywhere in my opinion it's just
+10:52
+preference on where you're doing this to
+10:54
+move it around but I like just resetting
+10:57
+that and then I like positioning my list
+10:59
+items sort of like this because when we
+11:02
+into the other view we're going to be
+11:03
+playing with the margin left as well on
+11:05
+these to space them out when they're
+11:07
+actually one next to each other instead
+11:09
+of on top of each other like this just
+11:11
+start making it look a little bit better
+11:12
+my nav a so when I have a color let's
+11:17
+get rid of it let's make a color white
+11:18
+text Declaration of none we could really
+11:24
+make the font size a bit bigger font
+11:25
+size of one point I don't know to REM
+11:28
+something like that that looks a little
+11:30
+bit nicer I'll do a text transform of
+11:34
+upper case if you've never used MS or
+11:38
+REMS by the way I'm there pretty simple
+11:40
+to use and I'd encourage you to start
+11:42
+learning a little bit more about them I
+11:44
+do have a video on that I'll link to it
+11:46
+in the description below as well so that
+11:50
+looks okay we need a little bit of a
+11:52
+hover effect on these though I think so
+11:53
+I'll do it nav a:hover so on this I
+11:58
+think we'll just change the color say
+12:01
+over to black instead of white I know I
+12:04
+can't see it now and I just realized I
+12:06
+need my background so this background
+12:07
+color here I want it to also be down
+12:11
+there so that would be on the nav itself
+12:12
+I just completely forgot so here we can
+12:15
+come in a new background and use my
+12:17
+variable background and I guess I'll
+12:24
+also need to do a width of 100% there we
+12:27
+go
+12:28
+cool so that o is I'm pretty happy with
+12:31
+how that looks
+12:32
+now just to really reinforce why I'm
+12:34
+using this variable background instead
+12:36
+of just putting the number in so here I
+12:37
+have the background and here I have the
+12:39
+background and potentially be having it
+12:41
+in other places well maybe background
+12:43
+wouldn't be the best name and if you
+12:46
+were using in other places well let's
+12:48
+just say I came in here and I change it
+12:49
+in this one spot the color changes in
+12:52
+both of them and actually I like that
+12:54
+color better so I'm going to leave that
+12:55
+alone but let's just put this to zero to
+12:57
+really change it so you can see I'm
+12:59
+using this color in two different places
+13:01
+and by changing it here and this should
+13:03
+make it black zero it's changing it in
+13:07
+both of them at the same time so that's
+13:09
+pretty cool and yeah I think I'm gonna
+13:11
+stick with this I like the more vibrant
+13:12
+color that I just got by doing that so
+13:15
+I'm going to
+13:15
+with that also sorry I'm scrolling
+13:18
+around but here you know if you wanted
+13:20
+to make it no more transparent I could
+13:22
+turn it off I could come here to point
+13:24
+five and make it more transparent and
+13:26
+it's doing every instance of this all at
+13:29
+the same time so that's why I set this
+13:32
+up here it just makes life a little bit
+13:35
+easier instead of trying to remember hex
+13:36
+codes or RGB values I'm cool
+13:39
+so my menu is there but obviously I
+13:41
+can't actually toggle it right now and
+13:43
+that's a big part of having a mobile
+13:45
+navigation is wanting it to sort of hide
+13:47
+and come out so we've gotta have
+13:51
+something to click on so this is gonna
+13:53
+seem a little bit strange but I'm
+13:55
+actually going to come in here and I'm
+13:57
+and I had a checkbox and I'll explain
+14:00
+why don't worry so input type equals
+14:03
+checkbox and I'll give this a class of
+14:09
+nav toggle so all that's done is given
+14:16
+me this little checkbox here seems a
+14:18
+little bit strange and I agree it is at
+14:21
+the moment so the whole reason I'm gonna
+14:22
+be doing this is because I want to do
+14:25
+this without any JavaScript we want to
+14:26
+do this CSS only and we can it's not
+14:28
+that hard and it's important that I'm
+14:31
+putting this right before my navigation
+14:33
+with how the doing this with CSS works
+14:36
+it's really important on the ordering of
+14:38
+these two things so to give you an idea
+14:41
+of how this is going to work let's say
+14:42
+that my navigation is actually
+14:47
+display:none
+14:48
+so it disappears cool and I'm gonna
+14:52
+scroll down here and what did we call it
+14:55
+we called it nav toggle so if you don't
+14:58
+know there is a pseudo class yeah
+15:03
+pseudo class and you know hover so hover
+15:06
+is a pseudo class you probably might
+15:08
+know like active and all that there's
+15:09
+also another one called checked so
+15:11
+checked is looking for if a checkbox is
+15:14
+checked and then what we can do is do a
+15:17
+little tilde here and say map
+15:21
+so what this is saying is as you know if
+15:25
+you you don't have a space so like here
+15:27
+with my nav
+15:28
+this is a link inside my navigation so
+15:33
+if I put this it's not looking for a nav
+15:35
+inside of Naftogaz
+15:37
+it's looking for a nav that's a sibling
+15:39
+of nav toggle so my nav toggle is here
+15:44
+its first sibling right after it I think
+15:47
+it's the first preceding sibling is what
+15:49
+this is looking for so it's looking for
+15:52
+is there a nav right after there is a
+15:56
+nav right after so what can we do with
+15:57
+it
+15:58
+so display:block so if it's checked my
+16:04
+nav which is right after my nav toggle
+16:07
+should become block when it's checked
+16:10
+like like that there it is
+16:12
+if I uncheck it it disappears so right
+16:15
+away I think you can see the value in
+16:17
+this and I think you get the idea of
+16:19
+where I'm going but you don't want a
+16:22
+checkbox do you know we don't want to
+16:24
+check box we want something that looks
+16:25
+like a hamburger menu so let's go and
+16:27
+make that and this is me I don't know if
+16:31
+the where I'm putting this is terribly
+16:33
+important it could be somewhere else but
+16:35
+I'm going to put it down here underneath
+16:37
+and I'll give this and so I'm gonna make
+16:41
+a label here and it's gonna be a label
+16:42
+for my nav toggle and I need to give it
+16:47
+a name so let's give it a class of nav
+16:51
+toggle label and a label I'm going to
+16:58
+close my label here and inside of my
+17:01
+label I'm gonna add in a span closed
+17:05
+path so the advantage with a label and
+17:08
+actually in my span for the moment I'll
+17:11
+put a big X and I just realized
+17:14
+something and doing this so I'm putting
+17:15
+my four here when I did my input we also
+17:18
+need to give it an ID so the ID of this
+17:20
+will also be now a photographer
+17:23
+generally when I say generally I always
+17:26
+do this where my navigation or my input
+17:29
+will have an ID and a class and the
+17:32
+reason I like putting both on them is in
+17:33
+my CSS
+17:34
+I prefer only working with classes and
+17:37
+not with ideas just for specificity
+17:39
+reasons the IDS are much higher in spy
+17:42
+so they can cause some issues with it I
+17:44
+know I'm sayin specificity really weird
+17:46
+it's a word I have trouble with I have a
+17:48
+whole video that dives into it a little
+17:50
+bit and you can listen to that if you're
+17:52
+curious and just listen to me stumble
+17:54
+over it but basically this is for me to
+17:57
+select here and my ID here is because I
+18:00
+want my label and my input to work
+18:03
+together so this nav toggle so for nav
+18:06
+toggle is going to look for an ID it
+18:08
+will not see it the class so now if I
+18:12
+come up and click on here you'll see
+18:13
+that it works but if I click on the X it
+18:16
+also activates and deactivates it even
+18:18
+though I'm clicking on the X and I'm not
+18:20
+clicking in the check box itself so what
+18:23
+all that means is I can come up to here
+18:26
+and say that my nav toggle has a display
+18:33
+of none we don't need to have that there
+18:36
+I only need to have this so even though
+18:38
+we can't see it it's still being checked
+18:40
+on and off so it's really really nice
+18:42
+and handy but I don't actually want this
+18:46
+to be an X we want to do a little bit
+18:48
+more with it so let's do all that I'm
+18:55
+gonna keep all of this above my now
+18:57
+actually actually you know what for now
+19:02
+for the moment I think what we'll do is
+19:04
+we'll put the X back in here just so we
+19:06
+can get it positioned where we want it
+19:07
+to so I'll move the x over to here and
+19:09
+then we'll change our X into the 3 bars
+19:11
+so here I am a nav toggle label so my
+19:18
+nav toggle label let's see this is gonna
+19:21
+have to be a position:absolute on here
+19:23
+because we want to tell it where it's
+19:25
+gonna go let's just do a top of 0 and a
+19:29
+left of 0 so we should see it showing up
+19:31
+there it is so it shows up right there
+19:34
+now I want the the let's just give that
+19:37
+a margin left of 1 M and the reason I'm
+19:41
+doing the margin left of 1 M there is
+19:43
+just because I give that margin left of
+19:45
+1 M so I just want these things to line
+19:47
+up perfectly now I'm gonna put a border
+19:50
+on this just so we can see what's
+19:52
+happening so I'm going to do a border of
+19:53
+1 pixel
+19:55
+solid red and we can see it it looks
+19:58
+like that and I want to be able to
+20:00
+Center my X perfectly in this space so
+20:03
+I'm gonna give it a height of 100% to do
+20:05
+that I'm also gonna give it a display of
+20:08
+flex and the reaiiy know we only have
+20:11
+one thing in there it's because this
+20:12
+makes it easier because then I can use
+20:14
+it in the line items center and my X
+20:18
+goes right in the middle of the height
+20:20
+there so I need to give it the height
+20:22
+display flex and then align Adams Center
+20:24
+and there's other ways of centering it
+20:26
+that don't require flex but yeah that
+20:30
+works well so I think we'll leave that
+20:32
+and I can turn off my board right now so
+20:35
+that's in the right spot but I don't
+20:36
+actually want something that's a little
+20:38
+X I want my three lines so to do that
+20:42
+I'm gonna use the span and I'm gonna use
+20:45
+some pseudo elements on the span so
+20:47
+that's my nav toggle label span and I'm
+20:53
+going to be doing it before and and
+20:55
+after on this label span before and my
+20:59
+nav toggle label span after so we're
+21:04
+selecting all three parts of it we're
+21:06
+selecting the before and after pseudo
+21:07
+elements as well as the span itself so
+21:10
+I'm going to start by giving them a
+21:12
+width of I don't know 2m actually before
+21:14
+we do that I need to make sure they show
+21:18
+up so let's do a display a block on all
+21:20
+of these a background white for now and
+21:25
+now we can worry about that so height of
+21:28
+two pixels and a width and again II
+21:32
+guess about two M but that might change
+21:34
+two M's gonna be about so yeah there we
+21:37
+go 32 pixels so that doesn't look too
+21:40
+bad and I'll do a border radius of two
+21:44
+pixels just around the corners on that
+21:47
+really subtle because it's not very big
+21:49
+but I think that'll look a little bit
+21:51
+nicer now I actually only have this one
+21:54
+showing up right now I don't have the
+21:55
+other ones and actually let's just make
+21:59
+this like that so we can see what we're
+22:00
+doing a little better I'm gonna do a
+22:03
+position:relative on here this is pretty
+22:06
+much just for my span here
+22:09
+the before in the after aren't showing
+22:10
+up yet so let's get those to appear so
+22:14
+the easy way to do that is to copy this
+22:15
+and paste it there and I need the
+22:22
+content property and I don't actually
+22:24
+want any content but if we don't have
+22:26
+this it defaults to none and nothing of
+22:28
+it shows up so I need that now you can
+22:31
+see that got thicker and it's because
+22:32
+they overlap like we have the the three
+22:34
+lines now do I need anything else on
+22:38
+here I don't think so
+22:40
+except I think we're gonna need a
+22:42
+position position:absolute I think we're
+22:46
+gonna need that so I'm gonna put it on
+22:47
+and now I can select these separately so
+22:50
+we'll start with my before and let's
+22:56
+just move it down to bottom I'm taking a
+22:58
+random guess seven pixels good so that
+23:04
+moves the bottom seven pixels and so
+23:06
+let's take the same thing but I want my
+23:10
+after and I'm gonna switch this to top
+23:15
+yeah I'm happy with that good good good
+23:18
+and when I click that it should appear
+23:21
+and disappear and I'm not going to do a
+23:22
+fancy animation on all of this if you do
+23:25
+want to see an animated one like this
+23:27
+where it turns into an X I do have
+23:29
+another mobile navigation that I built
+23:30
+out that takes a look at that but it
+23:33
+uses clip paths and does some other
+23:34
+stuff but overall I think that looks
+23:39
+pretty good and I'm happy with how it
+23:41
+works so that's cool son looks good and
+23:44
+it works but we want to make this look
+23:46
+not simply good but great we're gonna
+23:49
+have to use a few transitions on this
+23:51
+puppy to do it because we want to make
+23:52
+sort of little animation type of thing
+23:54
+so we're news transitions to make those
+23:55
+now the thing with transitions is to be
+23:58
+as high performance as possible you want
+24:00
+to limit your transitions to four
+24:01
+different properties opacity scale
+24:03
+translate and rotate if you'd like more
+24:06
+information on this I've put a link in
+24:08
+the description below and if not just
+24:11
+trust me on it it deals with repainting
+24:15
+and stuff like that that the browsers
+24:17
+have to do when you're doing transitions
+24:18
+and stuff
+24:20
+so let's go and take out our
+24:21
+display:none that I put in here before
+24:26
+not that one we want to go down onto my
+24:28
+navigation so we want to take that
+24:30
+display:none out and I want to go and
+24:32
+find this one and take that out too
+24:35
+because I want it to be here so instead
+24:39
+of display:none what I'm gonna do and
+24:44
+this is kind of weird
+24:45
+but I'm gonna come in here and do a
+24:47
+transform scale now the thing with scale
+24:52
+is I can put in again number so say I
+24:54
+did 50 or about fifty point five it will
+24:58
+be half the size it originally was so
+25:01
+0.75 would be 75% and a 1 in here would
+25:05
+be the actual size but you can actually
+25:08
+put two values in here so if I did a 1
+25:10
+and 0.5 it's gonna smoosh it but up and
+25:14
+down but this way is staying at a
+25:15
+hundred percent or if we switch that
+25:17
+around if I say 0.5 comma one it's the
+25:20
+opposite it's gonna smoosh it
+25:22
+horizontally but vertically it's staying
+25:25
+at a hundred percent so what I actually
+25:27
+want to do in this case is I want to
+25:28
+give it zero here which is going to
+25:30
+crush it all the way down but I want to
+25:32
+keep the width at 100% then when we get
+25:38
+to here I have a transform scale 1 comma
+25:43
+1 so now it's gonna look exactly the
+25:47
+same as we had before so there's
+25:49
+actually no difference but the advantage
+25:51
+with this is unlike the display:none is
+25:54
+I can do a transition on here so if I
+25:58
+come in with a transition and let's say
+26:00
+transform 400 milliseconds and we'll do
+26:04
+an ease in out and see what that looks
+26:06
+like so there we go so you can see it's
+26:10
+transitioning in and out but obviously
+26:12
+we have a problem it's not transitioning
+26:15
+from the right spot it's growing from
+26:16
+over here and we want it to come down
+26:18
+and up from the top hmm well luckily
+26:22
+it's not hard to fix on here my
+26:25
+transform I can do a transform origin
+26:28
+and just right in top
+26:31
+so the default was pretty much in the
+26:32
+center so now instead it's going to you
+26:35
+going from the top
+26:37
+cool so already I think that's a lot
+26:40
+better but it's not really what we want
+26:43
+the links look really funny when they
+26:44
+get scaled they're getting like squished
+26:46
+and it looks well it looks like poop to
+26:48
+be honest we can make the links fade in
+26:52
+as the scaling finishes though so
+26:54
+instead of squishing like this the link
+26:56
+sort of appear into the navigation so
+27:00
+remember the four properties that I can
+27:02
+do
+27:03
+there's scale translate rotate and
+27:05
+opacity so we're allowed to do our
+27:09
+opacity so let's come down onto here and
+27:11
+I'm going to say that my links here have
+27:13
+an opacity of zero so now if I do that
+27:16
+it just looks like my menus growing and
+27:19
+drinking the links are still there we
+27:21
+just can't see them because they have an
+27:22
+opacity of zero so then on here we can
+27:26
+add this so it's my nav toggle checked
+27:33
+till the nav space a get any bit more
+27:37
+complicated as a selector but that's
+27:41
+what we need we need our nav links that
+27:43
+are inside our nav that are next to our
+27:46
+sibling of my nav toggle when it's
+27:49
+checked and these will have an OPA
+27:51
+opacity of one so you can see they're
+27:56
+there and then they disappear and so
+28:00
+it's working sort of but let's go and
+28:03
+add in our transition on here so we can
+28:07
+do our transition opacity and let's do
+28:12
+like 250 milliseconds ease in out but
+28:18
+I'm also going to do a delay on this so
+28:20
+this is an animation delay so what that
+28:23
+means is take this much time before
+28:26
+starting my animation so now when I
+28:30
+click on this see how the animation when
+28:33
+here its own it's just finishing up and
+28:36
+then they come in to really illustrate
+28:38
+this actually it's just at a zero here
+28:41
+so it won't really show that way but
+28:43
+when I go this way and then we wait and
+28:47
+we wait and we wait and we wait and then
+28:48
+eventually they fade in so it's taking
+28:50
+two thousand five hundred milliseconds
+28:52
+two two and a half seconds then the
+28:54
+animation this part kicks in so by
+28:57
+having the delay on there just a short
+29:00
+delay as it comes in it goes but you'll
+29:02
+notice when I shrink it it's still
+29:04
+squishing them because the shrinking
+29:06
+animation happens right away there's a
+29:07
+delay on it so that doesn't quite work
+29:10
+luckily we can fix this a little bit so
+29:14
+if ever you've done something like
+29:16
+adding a transition unto something like
+29:19
+this with an Ave and then in a hover
+29:21
+whatever and you put the transition here
+29:23
+transitions a color you'll notice or
+29:27
+you'll notice that the transition only
+29:30
+works in one direction but not the other
+29:31
+one so what we can do here is this is
+29:35
+always on here so there's always this
+29:37
+delay but when I click this way I don't
+29:40
+want there to be a delay I only want the
+29:42
+delay to come when I'm opening it not
+29:43
+when I'm closing it so luckily what we
+29:46
+can actually do is add the delay here so
+29:50
+let's say we do transition actually I
+29:53
+want to copy exactly what we have here
+29:56
+onto this one so this means when it gets
+30:01
+checked and it's opening up we want it
+30:03
+to have that delay on it but when we
+30:05
+click this and it's no longer checked I
+30:07
+want it to be a different one so let's
+30:09
+just take out the delay and maybe we
+30:11
+could even speed this up a little bit
+30:13
+150 milliseconds because we need to fade
+30:16
+out pretty fast before it actually
+30:18
+starts getting smushed so now when I
+30:20
+click on it this way there's the delay
+30:21
+and then it all fades in so it's using
+30:24
+this one because it's using the check
+30:26
+state but as soon as I click this that's
+30:28
+no longer checked so it's no longer
+30:30
+checked it's not gonna use this
+30:32
+transition it's going to come up and
+30:34
+it's gonna use this transition instead
+30:35
+so this transition is much faster and
+30:37
+there's no delay on it so as soon as I
+30:39
+click on this you'll see it's gonna fade
+30:40
+out and it's gonna fade out quite fast
+30:43
+which is perfect because we don't see it
+30:45
+getting smushed and I think our timings
+30:47
+are actually really good on this and it
+30:49
+looks pretty good I'm really actually
+30:50
+happy with this whole thing and how it's
+30:53
+looking
+30:53
+right now so that's really cool and
+30:57
+really fun and there we go a nice simple
+30:59
+way to make a drop-down with absolutely
+31:01
+no JavaScript involved so it looks great
+31:04
+on small screens now but let's make it
+31:06
+look good on bigger screens because to
+31:08
+be honest you know that looks kind of
+31:09
+boring like this and you know we can we
+31:13
+we have room for navigation so let's
+31:15
+take advantage of all that room and
+31:16
+build one in now the width I'm gonna use
+31:20
+on I'm gonna make a media query I'm just
+31:23
+gonna do it all the way at the bottom so
+31:24
+I can put everything in this one media
+31:25
+query so the width on this is going to
+31:29
+be really arbitrary let's say min width
+31:33
+of 800 pixels I'm just using some nice
+31:38
+round number you choose the break point
+31:40
+that you're using for your design or
+31:41
+that works with your navigation layout
+31:44
+and everything so the first thing is we
+31:46
+don't actually need this thing anymore
+31:47
+right so let's turn that off so an
+31:51
+avatar --gel label can be a display of
+31:56
+none there we go and that little puppy
+32:01
+there is gone now the next thing we want
+32:04
+to do is we want to set up our header
+32:06
+and the header in this case I'm using
+32:08
+CSS grid on it so one of the nice things
+32:11
+about CSS grid is it has sort of done
+32:14
+away with the need for container divs um
+32:16
+so let's this up display grid and I'm
+32:21
+gonna make I'm gonna make three columns
+32:23
+on here
+32:23
+um so I'm gonna do grid temp late
+32:27
+columns um if you've never used these I
+32:31
+do have some videos on these as well
+32:33
+I've been saying that a lot I'm using a
+32:34
+lot of the things that I've used over
+32:36
+time to do this one FR so to explain
+32:41
+what i'm doing here is i'm setting up
+32:42
+four columns FR is a fraction unit so
+32:44
+it's pretty much left over space so I
+32:47
+want left over space on the left and
+32:49
+right Auto the logo I want it to be in
+32:52
+one that's automatically generated and
+32:54
+my navigation is gonna go in one I'll
+32:57
+say a minimum of 600 pixels px and a
+33:02
+maximum one fr I'm wondering if I need
+33:05
+to change that so right away you can
+33:06
+actually see my logo
+33:07
+moved over and I'm going to inspect here
+33:09
+I'm using so in the Firefox dev tools
+33:13
+there is this really nice grid inspector
+33:15
+so if I turn that on we can see the grid
+33:18
+lines that are coming up and I'm gonna
+33:22
+leave that on for the moment I think
+33:24
+just because it's gonna make
+33:25
+visualization of what we're doing a
+33:27
+little bit easier so you can see that
+33:30
+the those lines are right there so as I
+33:34
+lay things out I think it'll make a
+33:35
+little bit more sense and I think here
+33:38
+actually if I click on that I can
+33:40
+display my line numbers and stuff which
+33:43
+will help make a little bit more sense
+33:46
+but I'm gonna leave that off until I set
+33:48
+this up a bit more and I'll shrink that
+33:51
+down just eveness a bit more room for
+33:52
+the moment so I want to say where my
+33:56
+things are actually going on the grid so
+33:57
+let's just say my logo is going grid
+34:01
+column to spend one and now it should
+34:07
+move over there we go so now I can put
+34:10
+my grid and numbers on because my second
+34:15
+one here was set to auto and there was
+34:17
+nothing inside it it was just collapsing
+34:18
+there was nothing in there so it became
+34:20
+zero so that's what just why I'm I
+34:22
+didn't want to confuse too much so I
+34:23
+have a one two three four five
+34:26
+so what I'm saying is I want my logo to
+34:29
+start at column two so it's starting it
+34:32
+the the line number two and it's going
+34:34
+across one I could also do this as just
+34:36
+a two over three to make it take those
+34:39
+and just for example if I did this as
+34:41
+two over four it would take up from two
+34:45
+all the way to four but I don't want to
+34:47
+do that I want to do two over three and
+34:51
+what else do I need to do on my logo I
+34:55
+think that's it and then I can come onto
+34:57
+my dot my just my nav and that one would
+35:02
+be grid column of three over four
+35:06
+because I want it to start here and I
+35:09
+want it to go up to here now the one
+35:10
+problem with this is I can't actually
+35:12
+see it and that's just because my nav a
+35:15
+currently have an opacity of zero so
+35:18
+city of 1 so we can actually see them
+35:21
+well actually it's cuz there's a whole
+35:23
+bunch of stuff going on and so for my
+35:26
+nav here the other thing I'm gonna do
+35:27
+I'm gonna see what keeps flashing like
+35:30
+that is it as things go now we did a
+35:33
+whole bunch of styles on the nav and I
+35:35
+don't want to have to undo all those
+35:36
+styles that I already did because that's
+35:38
+just really annoying so there's this
+35:40
+really nice thing I can say all actually
+35:43
+I'm gonna do this above my grade columns
+35:45
+here I'm gonna say all and on set and
+35:50
+look at that I have a navigation again
+35:51
+so what this is doing is it's taking off
+35:53
+all the things that I did up before when
+35:56
+I did the mobile version of it it's just
+35:58
+take everything off of my nav so now I
+36:00
+can actually see it and it's going on
+36:03
+the grid column from 3 to 4 so that is
+36:06
+perfecto just as a word of caution the
+36:11
+all isn't a fully implemented CSS
+36:13
+feature yet I have the time of making
+36:15
+this video it won't work in IE or an
+36:17
+edge though it is under consideration
+36:19
+for edge at the moment so let's come on
+36:23
+my nav UL next and say a display of flex
+36:27
+on here so they'll go next to each other
+36:28
+instead of how they were so there we go
+36:31
+third that way I think on here I should
+36:34
+be able to do a flex another flex just
+36:38
+defy content black and there we go just
+36:47
+to move it all the way to the right side
+36:49
+um and let's put a border let's just say
+36:52
+border one pixel solid red I just want
+36:54
+to see what the height of this is right
+36:55
+now so on the nav itself again I'm just
+37:00
+gonna use this trick display flex which
+37:04
+will stretch that out actually that okay
+37:08
+we'll do on here just ePHI content flex
+37:14
+and and we'll do an align items Center
+37:19
+so that should move that over there
+37:22
+perfect oh good you can see that there
+37:26
+is an extra bit of height here right now
+37:27
+that's because my list items have
+37:30
+the margin-bottom on them so I can take
+37:33
+those that margin-bottom off right now
+37:37
+so an Ave Li margin-left let's make it a
+37:43
+bit bigger let's say 3 M margin-bottom
+37:47
+0 there we go so they're a little bit
+37:51
+more spread out and they're perfectly
+37:53
+centered in that space now and just to
+37:56
+look at the the one fr thing so the 1i
+37:59
+FAR's is taking up like available space
+38:01
+and shrinking and actually I realized my
+38:05
+min max here actually isn't gonna work
+38:07
+properly let's say I make that three I
+38:13
+think it'll work a little bit better
+38:14
+maybe even has to be bigger oh there we
+38:17
+go I think that's working out a little
+38:19
+bit better just saying that of the
+38:22
+available space so the available space
+38:24
+is this so this should try and be about
+38:27
+three times bigger than this one or that
+38:29
+one yeah that looks a little bit better
+38:32
+and then it gets to the minimum width of
+38:35
+600 and then right before we get too
+38:38
+narrow look it goes over and then we get
+38:41
+our drop down good good good
+38:44
+so that's looking pretty good the only
+38:46
+thing left that I want to do is add in
+38:48
+my little hover effect that we're gonna
+38:50
+put in to the navigation here so let's
+38:55
+scroll down and I'm only gonna do this
+38:57
+on my fullscreen one here so my nav a
+39:04
+[Music]
+39:07
+before right yeah I know baby four will
+39:12
+do it on the before and so as with all
+39:14
+pseudo elements we do need to give it a
+39:16
+content of nothing or they don't always
+39:18
+get nothing but most of the time when
+39:20
+they're design em look when they're
+39:23
+design elements they always get a 1 of
+39:26
+nothing I'll go with a height of like 5
+39:28
+pixels I think that's what I used last
+39:29
+time a background of black
+39:33
+so that we can see our line is already
+39:36
+there
+39:38
+let's give it a position of absolute
+39:41
+which will break it do to do because
+39:47
+let's just give them top of negative one
+39:51
+M let's see where that puts it left of
+39:55
+zero or right of zero let's see what
+39:58
+happens now and position relative on
+40:05
+here there we go okay that brought them
+40:07
+back good good good had me a little
+40:09
+worried there let's make this a bit
+40:11
+smaller 0.75 either bigger or smaller
+40:15
+but I think it worked out well where I
+40:17
+have it now
+40:18
+and I'm going to use the exact same
+40:20
+trick I used last time so before and
+40:22
+when I say last time I mean I'm gonna
+40:23
+use the same trick I'm gonna get rid of
+40:25
+these grid lines and everything this
+40:28
+trick here where we use the scale to
+40:31
+smoosh and grow things since it's a nice
+40:34
+little way of getting it so on here I
+40:37
+can bring in a transform scale the last
+40:44
+time we did a 1-0 because we want to do
+40:46
+shrink the height this time I want to
+40:48
+shrink only the width of it so I'm going
+40:50
+to do a zero comma one and we might as
+40:55
+well add the transition in right away
+40:56
+transition transform ease in out I don't
+41:02
+know 250 milliseconds and we'll see how
+41:04
+that looks
+41:05
+and so then my nav a:hover
+41:10
+before transform a scale 1 comma 1 and
+41:19
+let's see look at that isn't that nice
+41:22
+it works out perfectly so when I hover
+41:24
+it's growing now last time I did this I
+41:28
+when I was using transitions on the left
+41:31
+and the right and you saw if I wanted it
+41:33
+to grow from the center I had to do like
+41:35
+a 50% 50% thing and then like it was a
+41:39
+bit more complicated and if I wanted to
+41:40
+move it around so the nice thing now is
+41:42
+if I do want to change this I can just
+41:44
+do a transform
+41:46
+originally we did before origin left and
+41:50
+then my line will grow in from the left
+41:52
+right you put right and it will grow in
+41:56
+from the right and if you want it
+41:59
+instead of being on the top you want it
+42:01
+to be on the bottom that you do bottom
+42:03
+and now my line is coming in from the
+42:06
+bottom so I'm gonna put that back to the
+42:09
+top and I'm just going to take this off
+42:11
+because I sort of like this one that's
+42:12
+growing out from the middle like that so
+42:15
+we'll leave it just like that whoo that
+42:19
+was a long one but we made it and I
+42:21
+think it was worth it I'm pretty happy
+42:23
+with the end result but if you have any
+42:24
+suggestions on things I could have done
+42:26
+better or just questions about my
+42:28
+process or anything like that please
+42:30
+leave a comment about it in the
+42:31
+description below also if you have any
+42:33
+suggestions for other videos feel free
+42:36
+to leave those I love getting them I
+42:38
+have a really long to-do list now but
+42:40
+it's all from you guys suggesting stuff
+42:42
+that you'd like to see so if you have a
+42:43
+cool idea I'd gladly add it into my list
+42:46
+well I have to your attention and just
+42:48
+in case you don't know I do also have a
+42:50
+newsletter I started it a few maybe
+42:52
+about a month and a half ago it comes
+42:54
+out every single Sunday but instead of
+42:55
+big long videos like this it's little
+42:57
+short snippets I like to think of it as
+42:59
+the the things I don't have that don't
+43:02
+have enough substance to them to make an
+43:04
+actual video about so hopefully things
+43:06
+you can read in 3 minutes or less for
+43:07
+the most part mostly CSS tips and tricks
+43:10
+type of stuff and maybe a little bit of
+43:12
+design thrown in there as well
+43:14
+an example I haven't done one on this
+43:16
+but just the whole all property with the
+43:18
+onset there that would be the type of
+43:20
+thing just focused on that that I would
+43:22
+make a newsletter about so if that
+43:23
+sounds interesting to you you can go
+43:25
+check out the link to that in the
+43:27
+description below if you haven't yet
+43:28
+subscribed to this channel you just
+43:30
+watched a really long video you're still
+43:32
+sitting here through the outro props to
+43:34
+you really you know so hopefully you
+43:37
+like the content I'm guessing it you did
+43:39
+if you're still here so just please
+43:40
+consider subscribing it's a new video
+43:42
+like this every single week so hit that
+43:44
+little subscribe button and I look
+43:46
+forward to seeing you in the future
+43:47
+before we wrap this one up just a really
+43:49
+big thank you to all my patrons it's
+43:51
+through your support that at all of
+43:53
+these videos are possible so just thank
+43:54
+you so much for showing the faith in me
+43:57
+to support me I really really do
+43:58
+appreciate it
+43:59
+well just a big thank you to everybody
+44:01
+honestly this channel is getting bigger
+44:03
+and bigger all the time and just you
+44:04
+guys are all really awesome so thank you
+44:07
+so much to everyone and don't forget
+44:08
+until next time to make your corn in the
+44:10
+internet just a little bit more awesome

@@ -19,6 +19,14 @@ https://www.codingnepalweb.com/responsive-dropdown-menu-bar-html-css/
 
 
 
+## 10.4: Create a responsive navigation nav with no JS
+
+20211223: This is best so far!
+
+- Ref:
+
+https://www.youtube.com/watch?v=8QKOaTYvYUA&list=RDCMUCJZv4d5rbIKd4QHMPkcABCw&start_radio=1
+
 ## Knowledges
 
 ## Font Awesome

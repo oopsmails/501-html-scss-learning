@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+/* 00: Basic setup */
+:root {
+    --background: rgba(0, 214, 170, .85);
+    --hamburger-margin-lert: 1em;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    --background: rgba(0, 214, 170, .85);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+}
+
+.content {
+    height: 200vh;
+    background-image: url(//unsplash.it/1000/1000);
+    background-color: #333;
+    background-blend-mode: multiply;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+
+/* 01: Navigation Style Starts Here */
+
+header {
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: var(--hamburger-margin-lert);
+    /* border: 1px solid red; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background-color: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 250ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: var(--hamburger-margin-lert);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+.nav-toggle:checked~nav {
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked~nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
