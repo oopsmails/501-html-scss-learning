@@ -27,4 +27,5 @@ In here, the location of *<checkbox>*, is right before the *<nav>*, it is cleare
 - 19:13, it is easier to keep *<span>X</span>*, to keep track moving around.
 
 - 20211222: paused at 19:45
+- 20211223: paused at 23:53, transition ...
 
