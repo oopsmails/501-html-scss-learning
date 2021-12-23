@@ -4,7 +4,7 @@
 /* 00: Basic setup */
 :root {
     --background: rgba(0, 214, 170, .85);
-    --hamburger-margin-lert: 1em;
+    --hamburger-margin-left: 1em;
 }
 
 *,
@@ -48,7 +48,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    margin-left: var(--hamburger-margin-lert);
+    margin-left: var(--hamburger-margin-left);
     /* border: 1px solid red; */
     height: 100%;
     display: flex;
@@ -98,7 +98,7 @@ nav ul {
 
 nav li {
     margin-bottom: 1em;
-    margin-left: var(--hamburger-margin-lert);
+    margin-left: var(--hamburger-margin-left);
 }
 
 nav a {
