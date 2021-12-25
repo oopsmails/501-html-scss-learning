@@ -3,47 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Fixed Header</title>
+    <title>10.6 index.html</title>
     <link rel="stylesheet" href="../assets/font-awesome/5.15.3/all.min.css" />
     <link href="../../css/10.6/index.10.6.css" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <h1 class="logo">Logo</h1>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <nav>
+        <a href="#" class="logo">LOGO</a>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar">Menu</label>
+
+        <nav class="navbar">
             <ul>
                 <li><a href="#">home</a></li>
                 <li><a href="#">about</a></li>
-                <li><a href="#">services</a></li>
-                <li><a href="#">contact</a></li>
-                <li class="navbar-goto-li">
-                    <input type="checkbox" id="goto-toggle" class="goto-toggle">
-                    <!-- <a href="#">
-                        GOTO <i class="fas fa-angle-down navbar-goto-li-angle-down"></i>
-                    </a> -->
-                    <label for="goto-toggle" class="goto-toggle-label">
-                        GOTO <i class="fas fa-angle-down navbar-goto-li-angle-down"></i>
-                    </label>
-                    <ul class="navbar-goto-ul">
-                        <li><a href="#">Spring Clound Login</a></li>
-                        <li><a href="#">Spring Cloud All - OAuth Toke</a></li>
-                        <li><a href="#">Between Components 3 Ways</a></li>
-                        <li><a href="#">SandboxHome-LiveUpdate-ChangeDetector</a></li>
-                        <li><a href="#">PlaceHolder</a></li>
+                <li><a href="#">pages +</a>
+                    <ul>
+                        <li><a href="#">blogs</a></li>
+                        <li><a href="#">services +</a>
+                            <ul>
+                                <li><a href="#">html</a></li>
+                                <li><a href="#">css</a></li>
+                                <li><a href="#">javascript</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
+                <li><a href="#">review</a></li>
+                <li><a href="#">gallary +</a>
+                    <ul>
+                        <li><a href="#">grid gallary</a></li>
+                        <li><a href="#">fles gallary</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">contact</a></li>
             </ul>
         </nav>
-        <label for="nav-toggle" class="nav-toggle-label">
-            <!-- <span>X</span> -->
-            <span></span>
-        </label>
     </header>
-    <div class="content">
-        <h2>Your content would go here</h2>
-    </div>
 
 </body>
 

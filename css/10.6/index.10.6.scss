@@ -1,254 +1,89 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-
-/* 00: Basic setup */
-:root {
-    --nav-background: rgba(0, 214, 170, .85);
-    --hamburger-margin-left: 1em;
-    --nav-item-margin-bottom: 1em;
-}
-
-*,
-*::before,
-*::after {
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
 }
 
 body {
-    margin: 0;
-    --background: rgba(0, 214, 170, .85);
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
-}
-
-.content {
-    height: 200vh;
-    background-image: url(//unsplash.it/1000/1000);
-    background-color: #333;
-    background-blend-mode: multiply;
+    min-height: 200vh;
+    background: url(//unsplash.it/1000/1000);
     background-size: cover;
-    display: grid;
-    place-items: center;
+    background-blend-mode: multiply;
+    background-position: center;
 }
-
-/* 01: Navigation Style Starts Here */
 
 header {
-    background: var(--nav-background);
-    text-align: center;
     position: fixed;
-    z-index: 999;
-    width: 100%;
-}
-
-.nav-toggle {
-    display: none;
-}
-
-.nav-toggle-label {
-    position: absolute;
+    z-index: 1000;
     top: 0;
     left: 0;
-    margin-left: var(--hamburger-margin-left);
-    /* border: 1px solid red; */
-    height: 100%;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    padding: 0px 7%;
     display: flex;
     align-items: center;
-}
-
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    display: block;
-    background-color: white;
-    height: 2px;
-    width: 2em;
-    border-radius: 2px;
-    position: relative;
-}
-
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    content: '';
-    position: absolute;
-}
-
-.nav-toggle-label span::before {
-    bottom: 7px;
-}
-
-.nav-toggle-label span::after {
-    top: 7px;
-}
-
-nav {
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    left: 0;
-    background: var(--nav-background);
-    width: 100%;
-    transform: scale(1, 0);
-    transform-origin: top;
-    transition: transform 250ms ease-in-out;
-
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    li {
-        margin-bottom: var(--nav-item-margin-bottom);
-        margin-left: var(--hamburger-margin-left);
-    }
-
-    a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        opacity: 0;
-        transition: opacity 150ms ease-in-out;
-    }
-
-    a:hover {
-        color: #000;
-    }
-}
-
-
-.nav-toggle:checked~nav {
-    transform: scale(1, 1);
-
-    a {
-        opacity: 1;
-        transition: opacity 250ms ease-in-out 250ms;
-    }
-}
-
-// GOTO
-.goto-toggle {
-    display: none;
-}
-
-.navbar-goto-li {
-    border: 1px solid red;
-    // need to fix sub-ul still holding place
-
-    .goto-toggle-label {
-        border: 1px solid purple;
-        color: white;
-    }
-
-    .navbar-goto-li-angle-down {
-        color: white;
-        margin-left: 10px;
-    }
-}
-
-.navbar-goto-ul {
-    margin-top: var(--nav-item-margin-bottom);
-    transform: scale(1, 0);
-    // opacity: 0;
-    // transition: opacity 150ms ease-in-out;
-}
-
-.goto-toggle:checked~ul {
-    transform: scale(1, 1);
-}
-
-
-@media screen and (min-width: 800px) {
-    .nav-toggle-label {
-        display: none;
-    }
-
-    header {
-        display: grid;
-        grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
-    }
+    justify-content: space-between;
 
     .logo {
-        grid-column: 2 / span 1;
+        font-weight: bolder;
+        font-size: 25px;
+        color: #333;
     }
 
-    nav {
-        all: unset;
-
-        /* the following lines are not from my video, but add Edge support */
-        position: relative;
-        text-align: left;
-        transition: none;
-        transform: scale(1, 1);
-        background: none;
-        top: initial;
-        left: initial;
-        /* end Edge support stuff */
-
-        grid-column: 3 / 4;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-
+    .navbar {
         ul {
-            display: flex;
-            /* justify-content: flex-end; */
-            /* border: 1px solid red; */
-        }
+            list-style: none;
 
-        li {
-            margin-left: 3em;
-            margin-bottom: 0;
-        }
+            li {
+                position: relative;
+                float: left;
 
-        a {
-            opacity: 1;
-            position: relative;
-        }
+                a {
+                    font-size: 20px;
+                    padding: 20px;
+                    color: #333;
+                    display: block;
+                }
 
-        a::before {
-            content: '';
-            display: block;
-            height: 5px;
-            background-color: black;
-            position: absolute;
-            /* top: -.75em; */
-            bottom: -.75em;
-            left: 0;
-            right: 0;
-            transform: scale(0, 1);
-            transform-origin: left;
-            transition: transform ease-in-out 250ms;
-        }
+                a:hover {
+                    background: #333;
+                    color: #ffffff;
+                }
 
-        a:hover:before {
-            transform: scale(1, 1);
-        }
-    }
+                ul {
+                    position: absolute;
+                    left: 0;
+                    width: 200px;
+                    background: #fff;
+                    display: none;
 
-    .navbar-goto-li {
-        border: 1px solid yellow;
-        position: relative;
-        text-align: right;
+                    li {
+                        width: 100%;
+                        border-top: 1px solid rgba(0, 0, 0, .1);
 
-        .goto-toggle-label {
-            color: white;
-        }
-
-        .navbar-goto-li-angle-down {
-            color: white;
-            position: absolute;
-            text-align: left;
-            margin-left: 10px;
-        }
-
-        .navbar-goto-ul {
-            background-color: var(--nav-background);
-            border: 1px solid purple;
-            position: absolute;
-            text-align: left;
+                        ul {
+                            left: 200px;
+                            top: 0
+                        }
+                    }
+                }
+            }
         }
     }
+}
 
+// focus-within not working??????
+header .navbar ul li:focus-within>ul,
+header .navbar ul li:hover>ul {
+    display: initial;
+}
+
+@media(maxwidth: 991px) {
+    header {
+        padding: 20px;
+    }
 }

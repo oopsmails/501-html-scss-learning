@@ -148,6 +148,10 @@ nav {
 }
 
 .navbar-goto-ul {
+    position: absolute;
+    left: 0;
+    width: 200px;
+
     margin-top: var(--nav-item-margin-bottom);
     transform: scale(1, 0);
     // opacity: 0;
