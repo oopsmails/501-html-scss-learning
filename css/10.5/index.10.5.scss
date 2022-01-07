@@ -139,7 +139,13 @@ nav {
     margin-bottom: var(--nav-item-margin-bottom);
     margin-left: var(--hamburger-margin-left);
     font-size: var(--nav-a-font-size);
-    // need to fix sub-ul still holding place
+    text-align: left;
+    top: 100%;
+    left: 0;
+    // background: var(--nav-background);
+    width: 100%;
+    transform-origin: top;
+    transition: transform 250ms ease-in-out;
 
     .goto-toggle-label {
         // border: 2px solid red;
@@ -151,33 +157,62 @@ nav {
         margin-left: 10px;
     }
 
-
     .navbar-goto-li-ul {
-        position: absolute;
-        left: 0;
-        width: 300px;
+        border: 1px solid red;
+        margin-top: var(--nav-item-margin-bottom);
         margin: 0;
         padding: 0;
         list-style: none;
-
-        margin-top: var(--nav-item-margin-bottom);
         transform: scale(1, 0);
-        transform-origin: top;
-        transition: transform 250ms ease-in-out;
-
-        li {
-            border: 1px solid red;
-            // position: absolute;
-            top: 100%;
-            left: 0;
-            background: var(--nav-background);
-            width: 100%;
-        }
-
+        display: none;
     }
+
+    li {
+        margin-bottom: var(--nav-item-margin-bottom);
+        margin-left: var(--hamburger-margin-left);
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: var(--nav-a-font-size);
+        text-transform: uppercase;
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+    }
+
+    a:hover {
+        color: #000;
+    }
+
+
+    // .navbar-goto-li-ul {
+    //     position: absolute;
+    //     left: 0;
+    //     width: 300px;
+    //     margin: 0;
+    //     padding: 0;
+    //     list-style: none;
+
+    //     margin-top: var(--nav-item-margin-bottom);
+    //     transform: scale(1, 0);
+    //     transform-origin: top;
+    //     transition: transform 250ms ease-in-out;
+
+    //     li {
+    //         border: 1px solid red;
+    //         // position: absolute;
+    //         top: 100%;
+    //         left: 0;
+    //         background: var(--nav-background);
+    //         width: 100%;
+    //     }
+
+    // }
 }
 
 .goto-toggle:checked~ul {
+    display: block;
     transform: scale(1, 1);
 }
 
