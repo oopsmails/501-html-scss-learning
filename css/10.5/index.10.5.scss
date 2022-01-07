@@ -6,6 +6,7 @@
     --nav-background: rgba(0, 214, 170, .85);
     --hamburger-margin-left: 1em;
     --nav-item-margin-bottom: 1em;
+    --nav-a-font-size: 1.2rem;
 }
 
 *,
@@ -50,7 +51,7 @@ header {
     top: 0;
     left: 0;
     margin-left: var(--hamburger-margin-left);
-    /* border: 1px solid red; */
+    // border: 1px solid red;
     height: 100%;
     display: flex;
     align-items: center;
@@ -106,7 +107,7 @@ nav {
     a {
         color: white;
         text-decoration: none;
-        font-size: 1.2rem;
+        font-size: var(--nav-a-font-size);
         text-transform: uppercase;
         opacity: 0;
         transition: opacity 150ms ease-in-out;
@@ -128,16 +129,17 @@ nav {
 }
 
 // GOTO
-.goto-toggle {
+.goto-toggle { // this is the checkbox
     display: none;
 }
 
 .navbar-goto-li {
-    border: 1px solid red;
+    border: 1px solid yellow;
+    font-size: var(--nav-a-font-size);
     // need to fix sub-ul still holding place
 
     .goto-toggle-label {
-        border: 1px solid purple;
+        border: 2px solid red;
         color: white;
     }
 
@@ -147,7 +149,7 @@ nav {
     }
 }
 
-.navbar-goto-ul {
+.navbar-goto-li-ul {
     position: absolute;
     left: 0;
     width: 200px;
@@ -232,7 +234,7 @@ nav {
     }
 
     .navbar-goto-li {
-        border: 1px solid yellow;
+        // border: 1px solid yellow;
         position: relative;
         text-align: right;
 
@@ -247,9 +249,9 @@ nav {
             margin-left: 10px;
         }
 
-        .navbar-goto-ul {
+        .navbar-goto-li-ul {
             background-color: var(--nav-background);
-            border: 1px solid purple;
+            // border: 1px solid purple;
             position: absolute;
             text-align: left;
         }
