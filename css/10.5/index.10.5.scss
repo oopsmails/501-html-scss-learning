@@ -158,9 +158,8 @@ nav {
     }
 
     .navbar-goto-li-ul {
-        border: 1px solid red;
+        border: 1px solid yellow;
         margin-top: var(--nav-item-margin-bottom);
-        margin: 0;
         padding: 0;
         list-style: none;
         transform: scale(1, 0);
@@ -175,7 +174,7 @@ nav {
     a {
         color: white;
         text-decoration: none;
-        font-size: var(--nav-a-font-size);
+        font-size: 1rem;
         text-transform: uppercase;
         opacity: 0;
         transition: opacity 150ms ease-in-out;
@@ -184,31 +183,6 @@ nav {
     a:hover {
         color: #000;
     }
-
-
-    // .navbar-goto-li-ul {
-    //     position: absolute;
-    //     left: 0;
-    //     width: 300px;
-    //     margin: 0;
-    //     padding: 0;
-    //     list-style: none;
-
-    //     margin-top: var(--nav-item-margin-bottom);
-    //     transform: scale(1, 0);
-    //     transform-origin: top;
-    //     transition: transform 250ms ease-in-out;
-
-    //     li {
-    //         border: 1px solid red;
-    //         // position: absolute;
-    //         top: 100%;
-    //         left: 0;
-    //         background: var(--nav-background);
-    //         width: 100%;
-    //     }
-
-    // }
 }
 
 .goto-toggle:checked~ul {
