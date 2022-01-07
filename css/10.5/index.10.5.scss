@@ -129,17 +129,20 @@ nav {
 }
 
 // GOTO
-.goto-toggle { // this is the checkbox
+.goto-toggle {
+    // this is the checkbox
     display: none;
 }
 
 .navbar-goto-li {
-    border: 1px solid yellow;
+    // border: 1px solid yellow;
+    margin-bottom: var(--nav-item-margin-bottom);
+    margin-left: var(--hamburger-margin-left);
     font-size: var(--nav-a-font-size);
     // need to fix sub-ul still holding place
 
     .goto-toggle-label {
-        border: 2px solid red;
+        // border: 2px solid red;
         color: white;
     }
 
@@ -147,22 +150,37 @@ nav {
         color: white;
         margin-left: 10px;
     }
-}
 
-.navbar-goto-li-ul {
-    position: absolute;
-    left: 0;
-    width: 200px;
 
-    margin-top: var(--nav-item-margin-bottom);
-    transform: scale(1, 0);
-    // opacity: 0;
-    // transition: opacity 150ms ease-in-out;
+    .navbar-goto-li-ul {
+        position: absolute;
+        left: 0;
+        width: 300px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        margin-top: var(--nav-item-margin-bottom);
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: transform 250ms ease-in-out;
+
+        li {
+            border: 1px solid red;
+            // position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--nav-background);
+            width: 100%;
+        }
+
+    }
 }
 
 .goto-toggle:checked~ul {
     transform: scale(1, 1);
 }
+
 
 
 @media screen and (min-width: 800px) {
