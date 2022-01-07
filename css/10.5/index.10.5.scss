@@ -158,7 +158,7 @@ nav {
     }
 
     .navbar-goto-li-ul {
-        border: 1px solid yellow;
+        // border: 1px solid yellow;
         margin-top: var(--nav-item-margin-bottom);
         padding: 0;
         list-style: none;
@@ -199,7 +199,7 @@ nav {
 
     header {
         display: grid;
-        grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
+        grid-template-columns: 0.25fr auto minmax(600px, 1fr) 0.75fr;
     }
 
     .logo {
@@ -261,7 +261,7 @@ nav {
     }
 
     .navbar-goto-li {
-        // border: 1px solid yellow;
+        // border: 1px solid red;
         position: relative;
         text-align: right;
 
@@ -277,11 +277,27 @@ nav {
         }
 
         .navbar-goto-li-ul {
+            // border: 1px solid red;
             background-color: var(--nav-background);
-            // border: 1px solid purple;
             position: absolute;
-            text-align: left;
+            // top: 0;
+            right: -55%;
+            width: 300px;
+            text-align: right;
+            transform: scale(1, 0);
+            transform-origin: top;
+            transition: transform 2500ms ease-in-out;
+            display: none;
         }
+
+        li {
+            margin-right: 1em;
+        }
+    }
+
+    .goto-toggle:checked~ul {
+        display: block;
+        transform: scale(1, 1);
     }
 
 }
