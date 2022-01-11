@@ -199,7 +199,7 @@ nav {
 
     header {
         display: grid;
-        grid-template-columns: 0.25fr auto minmax(600px, 1fr) 0.75fr;
+        grid-template-columns: 0.5fr auto minmax(600px, 1fr) 0.75fr;
     }
 
     .logo {
@@ -226,8 +226,10 @@ nav {
 
         ul {
             display: flex;
-            /* justify-content: flex-end; */
-            /* border: 1px solid red; */
+            justify-content: flex-end;
+            align-items: center;
+            // white-space:nowrap; // albert
+            border: 1px solid red;
         }
 
         li {
@@ -260,38 +262,47 @@ nav {
         }
     }
 
-    .navbar-goto-li {
-        // border: 1px solid red;
-        position: relative;
+    .goto-toggle-label {
+        color: white;
+        text-decoration: none;
+        font-size: var(--nav-a-font-size);
+        text-transform: uppercase;
+        display: inline-block;
+        white-space:nowrap;
+    }
+
+    nav ul li .navbar-goto-li-ul {
+        all: unset;
+
+        position: absolute;
         text-align: right;
-
-        .goto-toggle-label {
-            color: white;
-        }
-
-        .navbar-goto-li-angle-down {
-            color: white;
-            position: absolute;
-            text-align: left;
-            margin-left: 10px;
-        }
-
-        .navbar-goto-li-ul {
-            // border: 1px solid red;
-            background-color: var(--nav-background);
-            position: absolute;
-            // top: 0;
-            right: -55%;
-            width: 300px;
-            text-align: right;
-            transform: scale(1, 0);
-            transform-origin: top;
-            transition: transform 2500ms ease-in-out;
-            display: none;
-        }
+        background-color: var(--nav-background);
+        position: absolute;
+        right: 0;
+        align-items: center;
+        // justify-content: flex-end;
+        white-space:nowrap;
+        width: auto;
+        text-align: right;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: transform 2500ms ease-in-out;
+        display: none;
 
         li {
+            // border: 1px solid red;
+            // display: inline-block;
             margin-right: 1em;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            text-transform: uppercase;
+            
+            opacity: 1;
+            transition: opacity 150ms ease-in-out;
         }
     }
 
