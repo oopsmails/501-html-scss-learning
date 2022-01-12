@@ -1,16 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
-@import url("https://fonts.googleapis.com/css2?family=Poppins:@400;700&display=swap");
-
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
-
-/* 00: Basic setup */
-:root {
-    --primary-color: rgba(0, 214, 170, .85);
-    --hamburger-margin-left: 1em;
-    --nav-item-margin-bottom: 1em;
-    --nav-a-font-size: 1.2rem;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:@400;500&display=swap");
 
 * {
     margin: 0px;
@@ -28,19 +17,10 @@ button {
 
 header {
     display: flex;
+    width: 90%;
     height: 10vh;
-    margin-bottom: var(--nav-item-margin-bottom);
+    margin: auto;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: var(--primary-color);
-}
-
-main {
-    height: 200vh;
 }
 
 .logo-container,
