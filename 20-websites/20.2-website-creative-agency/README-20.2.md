@@ -12,6 +12,19 @@
 https://github.com/bradtraversy/creative-agency-website
 
 
+0:00 - Intro
+2:47 - Homepage HTML
+8:52 - Homepage CSS
+21:02 - Toggle & Navigation CSS
+34:11 - JavaScript Toggle
+38:09 - Media Queries
+41:00 - Services HTML
+46:40 - Services CSS
+53:30 - Work HTML
+56:30 - Work CSS
+1:03:56 - Contact HTML
+1:10:49 - Contact CSS
+
 ## Notes: index.html
 
 ### 09:03 of 1:26:50: Start of style.ss
