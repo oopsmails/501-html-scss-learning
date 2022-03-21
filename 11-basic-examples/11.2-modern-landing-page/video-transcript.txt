@@ -1,0 +1,1473 @@
+0:00
+[Music]
+0:06
+hi my name is kevin and i just want to say a huge thank you to brad for having me here on his channel this is so exciting to be
+0:12
+doing this i'm really humbled to be here this is a really fun project that we're going to be building out we're going to be using custom
+0:18
+properties in a way that maybe you haven't used them before but i think makes them much more versatile we're also going to be playing with
+0:24
+floats and shapes outsides and all sorts of really fun css stuff it's a really i had so much fun putting this
+0:29
+together i'm really happy brad had me on here because it forced me to push myself a little bit to come up with something really fun where we could learn a whole
+0:35
+bunch of stuff it's a bit of a long video but i really think it is a fun one there's a whole bunch of really cool stuff in this is the type of thing with
+0:41
+css that gets me excited these types of things that we're able to do now so enough talk let's jump right into it
+0:47
+okay so let's get started here we're starting with a completely blank file more or less i don't have very much
+0:52
+going on here i have a link to a google font and i have a link to my main css file here so if we go and look
+0:58
+over here you can see i have nodo styles which is what i've linked over we're going to be using that for this design
+1:04
+and we have nothing in the page itself now i am going to be using sas to do this i am using sas live compiler
+1:11
+i know it's a little bit out of date but we're not really going to be pushing sas i just want to keep it really nice and basic for this if you're not used to
+1:17
+sass you'll still be able to follow along there's not a big difference and i'll explain the differences that i do
+1:23
+put in here but it's going to look more or less like regular css for the most part so the last slide the
+1:28
+live sas compiler is just going to automatically update my css file every time and then i'm running live server
+1:34
+so any changes to the html or css that i make they will automatically get pushed um live to here so i don't have to hit
+1:41
+refresh and so to get started on this well what do we want we want to have our
+1:46
+here a header area so i'm going to do a header with a class of hero on it because it's our nice big hero area and then inside of
+1:53
+there we're going to need a container and i am using emit here so you can see as i do dot container it's saying the emmet
+1:59
+abbreviation and it's going to give me a div class of container so if i hit tab on
+2:05
+that it pumps it out for me so i don't have to do it we can do some more things with emit than that so say i have an h1 with a
+2:11
+class of main text and it's also going to have a paragraph and it's also going to have an
+2:17
+a so an anchor btn with the class of btn and we're not gonna have anywhere for that to go yet
+2:23
+so i'll just put the hashtag right there and i have some um text here saved off screen so i'm just gonna grab
+2:29
+that and we'll paste that right in there and i'll see you as soon as i'm done pasting the rest of this in all right so you can see that some of
+2:35
+that has started coming in there and after my header we're going to make a main
+2:40
+it's always a good idea to have a main area and i know this isn't like a real site we don't have a navigation or
+2:45
+things like that but um i still think it's worth having to have some semantic html just like we have our header here
+2:51
+at the top now i'm going to have two different sections in my main so we can do a section with a class of
+2:56
+featured plus a section with a class of and we'll call it our
+3:02
+products it's not really a full products page but we'll give it that name anyway and i like separating things just to make it a
+3:08
+little bit easier to know what we're working on so inside the featured section so like in our hero we will use a container here
+3:14
+just to hold the content from stretching too far apart now we're going to use an h2 called a section title and we're also going to
+3:23
+have then so let's put that in there actually and we'll call it a featured products
+3:30
+and after rh2 and actually i'm writing html i might as well drag this up and when we start doing the css um i can
+3:36
+shrink that down you'll be able to see more of what i'm doing after our featured products what i want is a div and the reason i'm using a
+3:42
+regular div here is we need to split that up into three columns so if we want to have and that's only large screens but still
+3:48
+i'm going to call this split because we're splitting our content into three columns you could call it a row you could call it
+3:53
+columns you can call it what you want i'm going to call it split i'm going to do a and then i'm going to do i'm going to
+3:59
+give this a class of featured item because it's one of the items
+4:04
+but we're going to have three of these so i'm going to say times 3. so we're going to have three of them but inside each one of those we're going to
+4:10
+want an image plus a paragraph and inside this paragraph we're giving that a class
+4:15
+of we'll call it um featured details uh double underscore
+4:22
+i'm using them here so uh details i'm sort of moving away from them a little bit but i'm not
+4:28
+super comfortable with the evolution of where i'm at yet so i'm going to stick with just doing regular bam for now
+4:33
+so we have our featured content then we have our featured items inside of there and inside of the featured items a
+4:38
+feature well of our image and then a featured details actually each one of these could also have a class on it so i'm just alt
+4:45
+clicking inside each one of those and we can give each one of those a class of featured image just like that next up we
+4:53
+can move into our products section so just like above we're going to have the same sort of base thing we're going to have a container
+4:59
+and inside of my container i want an h2 with the same one that is before so that would be my section title just like that so let's hit tab on
+5:07
+that and this one is going to be uh just like our products we have there we'll come in with the same thing our
+5:12
+products and after the h2 now this time around it's gonna be a little different we
+5:18
+don't need an extra div because we're not splitting things up um three different items here now these could probably be
+5:24
+articles um articles are things that are sort of self-contained pieces of information on a page so i
+5:30
+don't think it's wrong actually to make this an article and it would link to another full page on this that could
+5:36
+have a full article on there so i'm going to do this as an article with a class of
+5:42
+product and we're going to have three of those once again i'm just trying to think because we have
+5:48
+three i'm going to come in and create some modifier classes after this but remember three products each product
+5:54
+is going to have its own title so an h3 and this can be um product
+5:59
+title plus it's going to have a paragraph so the paragraph can have a class of product
+6:05
+description and we'll have another uh link with a btn in there so a dot btn should be fine um
+6:12
+it's not gonna be a special button it's just gonna be you know we're gonna play around with the color of the buttons in a different way than doing something in there
+6:19
+so i think that's pretty much the the main organization of this that we're going to do um that's all the content except i
+6:25
+did forget an important thing so i'm going to come in here and do it really fast we want an img and we can give that a
+6:32
+product image and there we go that would be an important step along the way
+6:39
+so i'm going to come through and bring on bring in all the images that i'm going to be using for these and bring in the text and i'll see you in just a
+6:45
+second because that's kind of boring to watch me do that so i'll do it quickly and then you can i'll see you on the other side
+6:50
+all right so you can see i brought in all of these images here and well they're all png so i have the transparency on them they could be webp
+6:57
+if you want to do a little bit of optimization on that but i'm just going to stay simple with
+7:02
+these i do have a little bit more stuff to be bringing in on this there is a little bit of content missing
+7:08
+with these but i'm going to wait until we're styling it to bring it in and i'll talk about why that is when we
+7:13
+get there so with all the content in place now we can actually go into our css and start working on there
+7:20
+so i've done this one line of css so far just because it is the thing i do it every single project
+7:25
+right at the top um and it's just to reset the box sizing on our site because it makes
+7:31
+our lives so much easier um so let's come on to the body next and i'm just gonna do our margin of zero which is another
+7:37
+sort of one we do all the time um i'm just gonna do running through on a couple of like reset things that we usually do here um
+7:43
+so a max width of a hundred percent and height of auto and display
+7:49
+of block that just helps on images i don't really need the height auto because i haven't set explicit heights
+7:55
+on my images um so you know we could actually save a line of css for this project by doing that
+8:00
+um here on the body we might as well set the font family as well um so i was using the 300 and the 700 for
+8:07
+this one so let's just go to the embed i've already got that i just want to be able
+8:12
+to copy this and i guess i didn't need to add both of them but we can add that to our family there and i am going to turn
+8:19
+word wrap off just because i prefer working like that and most lines of css are really short
+8:24
+so right away we should see that we have a much nicer looking font already coming in there and remember i already linked to the
+8:31
+google font uh at the very beginning right there uh another thing i like doing is a general reset is my
+8:37
+line height i always default a lot of people use 1.65 i use 1.6
+8:42
+i like a little bit of extra space i guess um on my lines and something that's going to get in our
+8:48
+way a lot is our default margins so i'm going to come in and get rid of them all paragraph and do a margin of zero on
+8:56
+those and we're going to bring margins back um but these tend to this i i tend to do
+9:01
+that a lot to get rid of the margins on my paragraphs i am in firefox so over here uh what i can do is a shift command
+9:07
+m and that's going to go to mobile view i am on um a windows computer so it will be a bit of a different shortcut i'm guessing it
+9:14
+shift i said shift command it was shift control m um if you're on a mac i'm assuming it's a shift command m but it
+9:19
+may be a little different um and just because i prefer doing a mobile first
+9:24
+approach when i'm doing my websites so i just find you end up writing less css this way so because you don't have to
+9:31
+override things with media queries you just add complexity for the most part not always true but i find it's easier to do things this way
+9:39
+so we do have our container and my container is something that will have a max width on it
+9:44
+but i'm going to start just by saying that the width is 85 with a margin of zero auto on there um
+9:51
+and the advantage with the width 85 is it just prevents things from touching the side you could just do this with
+9:56
+padding instead so if you did that you know no issue whatsoever i do that on some projects
+10:01
+um but we can come in like that and i think i'll give this a max width 65 m i tend to set my widths
+10:09
+with m i know a lot of people are more comfortable with pixels but it's just uh something i've gotten used to doing
+10:14
+uh if you're not too sure it's just you know 65 times 16 because i haven't changed the default so it's
+10:19
+about a thousand pixels wide as my max width more or less so uh with that done that's my container so i
+10:26
+always try and start as much as possible also with my generic or my reusable classes so i'm not jumping right away to styling
+10:32
+my hero i'm trying to style first things like the container another thing is like my btn it's a
+10:38
+reusable class so we can make our button actually look good and we're going to do something a little bit interesting right off the
+10:44
+line here but the first thing i'm going to say is display inline block which is kind of standard just so padding margin i'll show you if you
+10:51
+don't know why i'm putting that on there so the text decoration of none
+10:59
+um we'll give that the padding of 0.5 m 1. 1.25 m
+11:07
+that looks good so uh i'll give it a background just really quick background of blue um so you can see it and a color white i
+11:14
+guess so we can read our text and the reason um i'm using the display inline block is because
+11:19
+if i didn't do that it's going to overlap the text there let's make this
+11:25
+top padding a little bit bigger and see how it's going over the other text so that's because
+11:30
+anchors or links are default inline so well you can apply a padding top and
+11:36
+bottom it doesn't actually affect the flow so by doing that now it behaves a little bit more
+11:41
+i do as you'd expect it to and you can also add a margin to it now as well uh top and bottom
+11:46
+so i'm going to stick with my 0.5 here though i do want to bring in the heavier font weight so font weight will be
+11:52
+700 and actually usually i try and keep all my font properties together so let's
+11:57
+move these guys up here um font weight we're going to give this
+12:03
+a text transform upper case
+12:11
+that looks a little better and also the font size of our button will be a little
+12:16
+bit bigger and that should be perfect but i know it is kind of big but we're going to
+12:21
+come back to that and actually why don't we give it a little bit of a border radius border radius
+12:26
+i'm gonna keep it pretty small uh 0.25 m on there just so it's nice little sort of softens the corners the shoes
+12:32
+aren't hard edges anywhere we have circles in our design other things like that so i think softening up our button does make sense there
+12:38
+um now one thing i'm going to change right away is for the background color and we're going to do the background
+12:45
+color whoops we're going to do both the background color and the actual color here so i keep all my text
+12:52
+properties together um so we can leave that there but my background what i'm going to do is do a
+12:57
+variable i'm going to say i'm going to give it the color accent and i'm going to do a comma and we're
+13:02
+going to stick with blue now because the blue really stands out and we could put a nicer color in there as the default and you'll notice that i'm using a
+13:10
+css variable but i've never declared a css variable anywhere yet and so we are taking a bit of a different approach to css variables but
+13:16
+you'll see why i think as we move through on this project so we can do the same thing here um var color we'll just call it color
+13:24
+text and we're gonna do white here um or even you know you can do fff and so it's gonna default to this
+13:31
+because this doesn't exist yet we're going to come to it though don't worry if you're a bit confused by it don't worry
+13:36
+it's going to make it all worthwhile setting this up so we'll also come in here and do my button hover
+13:43
+dot button focus button focus and on those
+13:49
+let's just do a transform of um scale 1.1
+13:55
+and maybe a opacity of 0.9 or something like that just for a
+14:01
+really small change um and it would jump out a little bit and that lower opacity
+14:06
+you won't really see it too much but it caused a little shift in color change and i guess we could transition
+14:12
+transition by transform over let's say 250 milliseconds and we'll do an ease
+14:20
+in out and i'm going to put a comma here because i'm going to do two transitions my second one will be on my
+14:26
+opacity which will do it a little bit faster we'll say 175 milliseconds and i'll do linear and
+14:35
+just like that now um and you know here i'll do it to 0.5 just you can see that the opacity is working
+14:41
+actually i don't like that those are different i'd have them both run at the same speed
+14:46
+probably looks a bit better but again i'm going to keep this as really subtle i just want a small little shift in color i think the jumping forward is
+14:52
+going to be enough and if i tab on to it too we're going to see that so perfect i'm not going to get rid of the outline chrome has a bit more of an
+14:59
+obvious outline than firefox here does i'm going to leave that on there nothing wrong with leaving the default outline especially chrome
+15:05
+has changed theirs recently so it does look a little bit better we're not getting that blue glow anymore
+15:10
+we're going to style our title first and i called it main text i should have called that main title
+15:16
+not main text that makes more sense uh so here we have our main title um and actually main title maybe
+15:23
+is a bad name just because we also have a main here so it could cause so why don't we call this um primary title i think that's a bit
+15:30
+better uh of a name whoops
+15:36
+primary title there we go um so for my primary title uh wait let's play with
+15:42
+the font size uh i'm gonna have some fun with this we're gonna throw a clamp in here so you don't know book clamp it is
+15:48
+recently gained a lot of support um so if you're not you know let's do two we'll do font size of four rem so
+15:54
+if the browser doesn't have support for it you should be you will be fine it will default to this
+15:59
+but if you do have it we could do a three ram here i'm going to put like a
+16:04
+we'll do five viewport width or maybe yeah five viewport width plus one rim just so there is um and this is
+16:12
+a nice thing with clamp you don't need calcs inside of it and then here we'll max it out at like a 4.5 ram at large screen sizes
+16:19
+um sas is my last my live sas compiler is yelling at me
+16:24
+so i will throw a calc in here but if i wasn't using sas or maybe even the newer version of sas
+16:29
+wouldn't yell at me um so you shouldn't have to do that but i'm gonna throw it in there so actually now if we look at my
+16:35
+primary title and i have to save it here too so it's updated so you can see it's gotten bigger and actually before i look
+16:41
+at what that does line height can be 1 on this guy or maybe a 1.1
+16:49
+so now you can see that the title is shrinking a little it's getting bigger and then at one point it caps out in
+16:54
+size even though my screen is getting bigger and bigger and bigger so here just to show you uh it's getting
+16:59
+bigger but then my my font size caps out at one point so the smallest it can be is three
+17:05
+the biggest it can be is 4.5 and in between it's going to grow at this rate so a nice really cool way to sort of
+17:13
+handle uh some responsive typography really really fun i love that so much
+17:19
+um so yeah that's there we go so that's looking pretty good um last thing we're new on here is a
+17:26
+text transform upper case and
+17:32
+actually i'm going to bring this back down to one now when you have uppercase text you can tend to get away with some smaller line heights
+17:38
+we can also come in next with our section title and actually i'm going to leave that blank let's style this up here because
+17:45
+you know it's more fun to do it that way um but in general i like organizing things and doing a lot of the
+17:51
+the more boring stuff first to be honest um the more generic things get reused and then come back into style the
+17:56
+different areas and but we do have our hero here so this is going to have first away text align
+18:04
+center so by doing that everything in that area should automatically become centered we can
+18:10
+give this some padding to give it some space to live in i'm going to go pretty big like a 15 m0
+18:17
+that looks not too bad and i think the next thing is we want to bring in a background so i'm going to go background
+18:23
+image and i have a url that we're going to use on this one which is uh an image we're going to use my i
+18:29
+think the shoe three oh wait i made a mistake there dot dot to go back a step and i think
+18:35
+it's the shoe three that i want to use which i already have in the design um but that's okay so we're gonna go
+18:41
+with the shoe three and let's just hit save and see what that does there we go so my shoe has come in um but it doesn't look fantastic now
+18:47
+right it looks okay but it's repeating in a kind of weird way now you could do something fun with this if we did a background size of like 10
+18:55
+maybe that's really small but you could do some like a cool pattern like that if you have a good image to work with
+19:01
+um and create something like that but in this case i'm not going to do that for my size but if you like that you can
+19:06
+always experiment with that a little bit and but what i'm actually gonna do here is bring in a second uh
+19:11
+image and this second image isn't really an image it's going to be a radial gradient
+19:17
+radial gradient and we're gonna do some dark colors on here so four four four one one
+19:22
+one should be relatively dark there we go and that's looking okay but i still can't read my text
+19:28
+that's kind of annoying uh and it's gonna be worse because here on my text i will eventually we've seen we wanna color white on that
+19:34
+that makes it even harder to read on a white shoe that's terrible kevin and you're right it is um and that one thing you could
+19:40
+also do here is just a background color of say 222 or something so if ever
+19:46
+your this breaks for some reason at least people are left and they can read the text
+19:51
+so that could be a good backup to have on there um so what i'm going to do is then do a background blend mode
+19:59
+and on my background blend mode here we're going to set it to multiply and hit save and it's all disappeared
+20:08
+oh we can't do my background color then ah we can't have my background color then didn't realize that okay we're going to
+20:13
+put in something here because it is possible someone's on a browser that doesn't support background blend mode
+20:19
+so what i'm actually going to do here is say that my background is my 222
+20:25
+and then i'm going to do at supports and we're just going to copy this line right here
+20:32
+so if you don't know supports this is a feature query and so what we're saying is
+20:38
+uh and i'm going to change this just to the background like that so if i grab you and drop you in here
+20:46
+um this is exactly if the person's browser supports background blend mode with multiply
+20:53
+they're gonna get this if it doesn't support background blend mode it would it's just gonna skip this whole
+20:59
+section or actually if it doesn't know what at supports is like internet explorer then it's going to skip this and it just doesn't work
+21:05
+if they're using some browser that for some reason doesn't support this and it's just going to turn that whole
+21:11
+thing off and it's going to give you this instead with a nice simple background um so you know that the text can be read
+21:17
+which is obviously really important so i'm going to throw that in there it's almost no more work to do it
+21:23
+now one quick thing is because i'm using sas i can nest it normally if you weren't using sas you would have to do your at supports
+21:30
+uh you know property value here and it can be any property value
+21:36
+pair and then here you would do your dot hero and then have your styles for that so
+21:41
+because i'm using sas i can nest it inside one of the reasons i like using sas
+21:46
+so just know that you can't um oops yeah you would have to do it like this if you're writing a regular css for it
+21:53
+to work all right so we need to space everything out that's in here and i think what i'm
+21:59
+going to do for this is i'm going to make a generic class um called spacing um
+22:04
+you can see places where they call it this is from andy bell and hayden pickering called it
+22:11
+stack i think or the stack um andy uses a lot called flow i'm just gonna call it um spacing
+22:18
+and what i'm gonna do is spacing's not gonna do anything but it's the direct children inside of
+22:24
+it will and i'm going to do a bit of the same thing i'm going to say a margin top and i'll explain this exactly in a
+22:29
+second margin top is going to be a ju variable of
+22:35
+spacer and if spacer doesn't work it will be to rem so what this is saying is any element
+22:42
+that is the adjacent sibling so it comes after the first another sibling
+22:48
+that is the direct child of spacing so it looks a little bit weird don't worry
+22:53
+about performance in using it what i'm going to do here is on my container i'm going to put spacing
+22:58
+and you can see it added that spacing so if we take a look in here what this is done is
+23:05
+it's added a margin top to my button it's added a margin top to this but it hasn't added a margin top to that
+23:11
+that's because it's this does it have a sibling before it it sure does this paragraph does this paragraph have a sibling
+23:17
+before it it sure does this h1 does this h1 have a sibling before it nope it has nothing
+23:23
+well it has its parent before it so there's no sibling before it it does not get that spacing
+23:28
+before so things like this can be really nice in just getting uniform spacing especially since we
+23:34
+turned off all our margins earlier on so i've become a big fan of using this
+23:40
+let's shrink that back down if you want to know the window snapping thing it's windows power tools that i'm using i
+23:46
+think it's called win it's power toys power tools power toys windows power toys um check it out it's
+23:51
+from microsoft really really cool you can set up zones and have things click into them really easily
+23:57
+and the last thing i'm going to do actually is let's go back down to our hero here so we've set all of that up we'll also do our background attachment
+24:05
+is fixed and my background repeat is no repeat
+24:12
+and so we get that shoe in the background and it just scrolls so it looks a little cooler it's like a super easy parallax win and
+24:19
+um yeah i think it's fine i think the positioning of the shoe is fine if you want to play with the positioning i guess we could do
+24:24
+a um background position of center center uh it's saying it is
+24:31
+centered i'm just thinking here oh i did y that's why i it auto i went too fast there there we go that should
+24:38
+be better it was bugging out because it was the the wrong there we go so it's actually centered in that space more
+24:44
+you could play around with positioning if you'd rather something else but i think that's perfectly fine looks good at big screen sizes
+24:49
+looks good at small screen sizes we are good to go um so now we are moving on down to
+24:57
+this next area so we might as well style up our section title so the first thing i can see right away is i want to text a line to be
+25:03
+center once again we can use our variables on this so our variables are clamps we can
+25:09
+say a font size of a clamp and i'll say clamp
+25:14
+in this case and what do we do on the last one three up to 4.5 so we can do like a 2.5 rim
+25:21
+calc we'll do five viewport width plus one rem again and again you shouldn't need if you're doing regular css or if you're
+25:27
+using an updated sas compiler i'm i'm guessing uh you won't need to do the calc nested inside of here and then we can cap it
+25:34
+out at like a four ram so it should still be a pretty big font size i won't have big font sizes on it still
+25:39
+so that looks pretty good and actually another thing our sections are going to be really tightly smushed together right now
+25:46
+so we could say our section all of our sections can have some padding let's just try seven and zero and see
+25:53
+that looks okay i like finding a number that's gonna be okay at small sizes and big sizes and right away at small sizes
+25:59
+i see that this doesn't look good so we can move back down to here and fix the line height on this
+26:04
+um so my line height will be again uh
+26:12
+usually a one or one point something will be perfect i think that's okay um i'm actually going to change the color here too
+26:19
+i have this dark dark blue that's saved off screen so we'll go with that now these are things you could also set
+26:24
+up as custom properties at the top um again for this one i'm just going to play with custom properties in a bit of
+26:29
+a different way but normally for all my colors i would have them set up as in the root if i plan on reusing them all right so
+26:36
+that's looking okay and that should have also at the same time fixed you know this one's gonna be looking a little bit nicer too so let's get these
+26:42
+shoes set up and do some stuff with them now um so this is a fun one so i'm gonna come up a little bit here because we
+26:49
+have my spacing i'm gonna go here with my container because i had my split and the
+26:54
+reason i'm bringing this up here and not leaving it with the other parts is because if this were a bigger site this would be
+26:59
+something that would be reused um i'm doing this in a way that i guess people normally would you have a display
+27:05
+flex which is going to make your columns which is fine because at big screen sizes i want to have columns but ideally it's small i don't want to
+27:12
+have columns they should stack and i don't really want to do this with a media query because i don't think we need one so i'm also going to do a flex
+27:18
+wrap of wrap which means that if there's not enough room instead of shrinking the items will
+27:24
+stack but that's not exactly what i want because i want them to be columns here
+27:29
+but not columns here so what we can actually say is we're gonna use a nice the all
+27:36
+alt the any actually this should be all direct children uh this way around we don't want it
+27:42
+there so all direct children of my split [Music]
+27:47
+uh and you could use the ampersand here so the ampersand in sas is pretty much saying re retake this so it's going to pump out
+27:54
+um a dot split star and it's going to write the css
+27:59
+right here um like that once it's compiled so that's exactly what i did here so i just saved myself some characters pretty much
+28:06
+by doing it and when i save they get smushed together which whatever and then this is where things get a little bit
+28:12
+interesting is i'm gonna do a flex basis of thirty percent and oh look at that
+28:18
+now we have columns again now with flex basis what you're saying is um what's sort of the ideal size so
+28:24
+when i didn't have a flex basis their default width for these because they're block elements i made them block
+28:29
+their images or they're not images those images are in divs so those divs have a default
+28:34
+width of a hundred percent they're all auto width so it's 100 so they're trying to get to 100 by
+28:40
+saying the flex basis is 30 now it's saying no forget that width they had we want them to be at 30
+28:46
+percent an interesting thing with flex basis though is you can also set and um it's sort of like having a width and
+28:52
+a max width on it is almost the exact same thing um so i'm going to put a min width of
+28:58
+15m here which means that they can't be smaller than 15m now you might say that might cause
+29:05
+some side scrolling it will if you get beyond like super super small uh if we bring up our calculator here 15 times 16
+29:13
+240 so you know i think you'll be fine um so you do want to be careful with that min widths you always want to be
+29:19
+very careful that your minimum width won't cause side scrolling but i think we'll be okay so what it's saying is it needs these
+29:26
+images need to be at least 15m but if there's room they can go next
+29:31
+to each other because it's display flex and if they're all next to each other they can actually grow and keep growing and now they're stopping just because
+29:38
+they're inside the container which is limiting their width so we can create a nice and even if i drop this down we'd see it in play a
+29:43
+little bit more so once they go next to each other they start growing growing growing i'm going to stick with my 15 though because i
+29:49
+don't want them to get too tiny now another thing that we can do because we have display flex on here and i'm going to put a gap
+29:55
+now this gap is not supported by safari yet but it's coming hopefully so i'm going to
+30:01
+use it um you could replace you could find other ways of doing this if you'd want
+30:06
+you know it's a little bit more complicated so i'm going to use a gap of 1m which is just going to put a space of 1m between these items um and
+30:13
+actually we can see that let's open up my dev tools and if i take a look at this we should have
+30:19
+uh digital
+30:24
+um if i turn it on so you can see there's put a gap there and a gap there but look there's all this other space
+30:29
+that's left over here that's not being used so what i'm also going to do here is a
+30:36
+justify content center to make sure they're always in the
+30:41
+middle and the advantage of that as well justify content center what it's going to do
+30:47
+is let's turn off this because we don't want it right now when i get to small screens it's also doing this
+30:52
+so remember before i had the justify content center we were getting this annoying layout um this i think is a lot more
+30:59
+interesting and we get the shoes like that it's not perfect by any means but i do think it looks a little bit better
+31:04
+and the nice thing with the gap is now the gap is going to be between them vertically right because the gap is the
+31:11
+space between these elements so here let's go back
+31:16
+at a split so here i can see that there's a space there of 1m and you can see even here we
+31:23
+have one m between them that way and one m between them here so the gap is always keeping if you used a grid you already know how gap works
+31:29
+maybe we could actually pump that up to two um so it's always no matter what layout it is they're always getting that
+31:35
+spacing so i really can't wait for safari to start supporting gap um i am gonna come on to my featured
+31:42
+my section title here we're gonna add a margin bottom on this because if not it's just going to be really annoying uh let's just do three ramp
+31:48
+create some gap there maybe even bigger five i think it's going to work fine for both of these sections so we can do
+31:54
+something like that now i want to make these look a little bit nicer and we do have other
+31:59
+content that's actually going to be brought in on them in a second um but before we get to that we're going to come down now because this is more
+32:06
+specific to these items so you'll notice my split was really layout based and i always like start the splitting in a
+32:12
+split splitting separating my layout from the design and the content that's
+32:18
+inside of the layout so my split here is styled everything that is layout wise for this section but
+32:23
+i could reuse that somewhere else with completely different content inside and that content is going to work in exactly the same way
+32:29
+really doesn't matter what's inside of this so this is literally just holding these things in place
+32:35
+and then i'm going to come down and style what i need to do in those in that area and make it look the way i
+32:40
+want it to look regardless you know this is doesn't matter what the layout is this is just what it looks like this one individual piece
+32:47
+so if we come and look at our html this is in our featured area and these are our featured items now i
+32:54
+made these links because the idea would be you'd be able to click on them all i know some people don't like putting stuff inside links you're allowed to do
+33:00
+that now i'm not breaking the rules and i'm also going to make these links
+33:05
+well you could say display block if you re i'm saying these links i'm thinking ahead i want these to be my uh
+33:11
+featured um and what you could do because this is sas i could do featured there and then say and
+33:17
+items and i could work on this people get angry with nesting i'm starting to embrace nesting a little bit but let's
+33:23
+just say color is red i just want to show you if you aren't nesting things in sass
+33:28
+it's okay so if we look at our compiled css here it should be at the bottom i just get my featured items so it's not
+33:35
+creating this weird nesting or anything like that if you use sass in this way like that
+33:41
+whereas if i just did here if i did dot featured items for some reason featured items
+33:49
+color blue just for fun if we go and take a look at what that would spit out it would actually make a
+33:54
+feature dot featured space featured items and i'd have my blue so obviously this is more what we're
+33:59
+after than that just to keep it a little bit simpler in the compiled css um so this one will get rid of
+34:08
+so the ampersand again is just taking this and plugging it in there letting me save a few keystrokes so my and items which
+34:16
+are my links we're going to say you could say display block on these i don't think we need to in this case
+34:21
+because they're flex items now and as soon as something becomes a flex item it doesn't really matter what its display
+34:27
+property is anymore they behave as a flex item they don't behave like a block element or an inline element or anything
+34:32
+like that so not a big deal but we'll put it on there anyway uh you know just in case
+34:37
+one of these would get used somewhere else i guess and actually you know what the featured here i think i wanted to lighten up the background a
+34:43
+little bit so background could be maybe like an ee just to separate it a little bit from this next section
+34:48
+um so on these items i think we're going to need a position of relative on them because we're going
+34:55
+to have some pseudo elements that come in to play here soon um and what i'm going to do actually is i'm going to do a
+35:00
+transform and we're gonna take the scale we're gonna scale them down so like a 0.85 or
+35:05
+something like that so they should all get a little bit smaller transform
+35:11
+let's that work 0.5 that is oh is it item
+35:19
+featured item no s close my actual css so i don't write anything in there
+35:24
+um featured item there we go they're super small so we don't want them that small i'm gonna go up to an eight five
+35:31
+and then because i'm using sass i can do an and hover and we can do a focus on this as well so
+35:37
+an and focus and here the transform will be a scale of one of course that's
+35:45
+gonna look kind of weird so we'll bring in a transition of transform we'll do the 250
+35:51
+milliseconds and i'll just do an ease in out and now we can make our shoe grow a
+35:57
+little bit when we hover on top so that's kind of fun another thing though i want to do on these is and again what this is
+36:04
+outputting here um is just going to be a featured item hover so it's literally making
+36:10
+a hole selector that's just featured item hover comma featured item focus is what this
+36:16
+is doing right there so you can see how sas some simple sas nesting it doesn't make complicated selectors if you do it right
+36:23
+and it can be really useful in speeding up a little bit um so here with i want to add the
+36:30
+circles that are going to go underneath this shoe and to add that in we're going to use a pseudo-element
+36:36
+so that's going to be on this so we're going to come here also my brackets you can see they're colored differently this is really useful in javascript as well
+36:42
+i'm just using um an extension called bracket pair colorizer for that so that's why here it's yellow then it
+36:48
+goes to purple and then it goes to the blue in javascript obviously have lots of nested brackets and this works for
+36:54
+square brackets too um it's not doing it in my css but if it was in i think it does anyway
+36:59
+um but it works for these ones as well if i have some there you go you can see that those are
+37:05
+changing color too so it can be really useful just to keep track of how things are nested instead of trying to find it here if you know what
+37:11
+i mean so here i'm going to say an and after
+37:17
+so that's my pseudo element anytime you have a pseudo element you need to give it content to make it exist so we'll do that
+37:28
+i'm going to give this a position of absolute and that's why i gave this a position a relative because i
+37:33
+knew i was coming in with this guy and so position absolute and then we're going to do
+37:39
+a background our position absolutely we should do our top i'm going to give this a width actually
+37:45
+know what i want to make sure it's a perfect circle so i'm going to do a the padding trick here because if i
+37:51
+say i said like top bottom left right um if this isn't a perfect circle like the div that this is inside of and it
+37:57
+probably isn't let's just give this a border of one pixel solid red so we can see it
+38:03
+um so it's a little rectangular and i don't want my one here to come out rectangular i
+38:09
+want it to be perfect circle but i also want to make and you know how do you match your width to your height you could use javascript or do other
+38:15
+stuff but another trick is to do padding 100 100 percent zero zero um because
+38:22
+padding's if you do padding 100 it's based on the width not on the height of something always good to know same
+38:28
+with margins you give something a margin top in percentage it's based on the width of its parent
+38:33
+so um it's gonna be 100 so let's just see if it worked background is red
+38:38
+uh it will start with red and we'll change it after so you can see it's a perfect square that is the width and the height are
+38:44
+matching each other this is 100 of the parent and 100 of the width of the parent
+38:49
+or this is the top so 100 is even though it's on the top it's using the width
+38:54
+padding is weird like that um so those are nice perfect circles
+39:00
+that we're getting in there awesome are perfect squares so to make them circles order radius
+39:05
+of 50 and they have vanished completely because now they have no color we should have kept a
+39:11
+color on their background on this i have a color that i have off screen here
+39:20
+and there we go now obviously we need them to be underneath the shoe so i do need to come in with some top
+39:26
+properties here is top zero gonna work i think so and i don't know if i have to but left zero
+39:33
+didn't move but i'll leave it on there anyway uh but now we need it to go backwards so z index of negative one do i wanna do
+39:40
+that i think i have to oh perfect i was worried that it would actually go behind
+39:46
+the gray background but there we go perfect it might actually be this transform
+39:54
+that's preventing it if i take off my transforms yeah when my when i have my transforms
+40:00
+off it's going behind the gray background um but fun thing with css is stacking context so when you have transform on
+40:06
+something um you're creating a new stacking context so the negative one is within this instead
+40:12
+of being within the scope of your whole site if and actually stacking context is one
+40:19
+of those things that's super useful to learn it's always rare that you run into issues but when you do it's a nightmare if you understand how it works or the
+40:25
+ways of creating new stacking context you can often solve your problems pretty quickly
+40:31
+so there we go that looks pretty good i'm not sure i love the size i don't know what would happen actually
+40:37
+i've always done 100 100 percent
+40:44
+i'm trying to if i did that and then this is uh 25 percent is that going to center it
+40:53
+no way that wouldn't work would it no that looks terrible uh i am just
+41:00
+going to go with like a 10 10 i think it's going to be perfect
+41:05
+it looks pretty good for all those shoes um so i'm gonna leave it like that i think i think i'm pretty happy with that um
+41:11
+the next part of this to make it a little bit more interesting and again this should work at all screen sizes right now so that's perfect
+41:17
+um what i'm gonna do though is i'm to come back into my index because i did want to have a little bit of extra content in here so
+41:23
+i'm going to go in all of these on the details and i'm going to bring this in and the first thing i'm actually going to do is
+41:28
+a span with a class of price and so the price can be
+41:34
+they're they're on sale they're only 99 each for these um clothes span oh we already have the
+41:39
+clothespin whoops um and then after my span we can come in and put in um the shoe name and actually i'm gonna
+41:47
+leave that stuck together and you'll see why in a second shoe name actually i don't think it matters one way or the other and we'll come over back to here and you
+41:54
+can see it doesn't look fantastic so on my item actually
+41:59
+yes this is my link so we're gonna do a text decoration decoration of none right away to get rid
+42:06
+of the text decoration um the color we'll just do like a dark dark gray um text
+42:14
+align center i think will work if it doesn't we'll do something else there we go that does work um and what i want is
+42:21
+we're going to stay in here now my span is going to be a display a block i gave this a class um
+42:30
+so i guess it doesn't really need to be nested in here but it belongs in there and i
+42:35
+guess i didn't have to give it a class whatever or you could do a dot price whatever you want um my price is going to be a font weight
+42:43
+of 700 because i want it to be bold and a font size much bigger let's go with three ram
+42:49
+maybe that's too big try two instead i'm you know you could have some fun with this
+42:56
+and this whole item i think i'm going to shrink the line height on it line height of one that's too tight 1.2
+43:04
+that looks pretty good um so when we hover on top we have that and each of them i think my image
+43:10
+dimensions were a little different because you can actually see this one's butting up against that makes it a little harder to read i prefer these a
+43:16
+lot more um but what i'm actually going to do with the span no not the span the whole featured
+43:24
+details and actually my span i guess could be um nested in there but whatever uh we're
+43:30
+gonna do and i'm just i don't know item yes we're gonna be here
+43:35
+no i'm in my item and item featured so actually i have to break out so we're
+43:40
+going to break out of here and i'm going to bring my span with me in a second um so featured is yellow
+43:47
+so i want to stick in yeah so we're here so i'm going to say and it was featured details
+43:54
+details and on my featured details uh yeah we're gonna bring that span
+44:02
+uh into there because that's sort of where it belongs a little bit more now
+44:07
+let's give it an opacity of zero
+44:15
+oh i just broke everything oh it's all broken because i misspelled
+44:20
+featured in future details the jared i should have done that all in
+44:27
+one shop but whatever we're there ah we fixed it okay good all right so now what we want to do is
+44:34
+i'm actually going to come in here and we're going to say that yeah the details opacity is zero ah now it's working okay
+44:41
+good and then what we can do is i actually want it to be i'm just trying to think because i
+44:48
+actually want it to be in here so i am going to nest this because it has to be anyway with the selector
+44:53
+um so then it's going to be the i have to actually write the whole thing out now just because the way sas works
+44:59
+so featured details uh opacity will go up to one
+45:05
+and there we go we can see it click on and off just like that and again if this was not
+45:10
+using sas let's just go look at the what that looks like compiled um it'd be faster than writing it out so that's giving me kind of a long
+45:18
+selector or even that could be on two lines so it's the featured items hover and then the featured details inside of
+45:24
+that the opacity is going up to one and then the same thing on focus so that's what um that's what we're up
+45:30
+to right there so when we do that now obviously i don't want it to look like that so here we're
+45:37
+also going to transition the opacity we can do the same time 250
+45:42
+milliseconds we don't want that we just want a space 250 milliseconds and i generally do
+45:48
+i think it was them the keyframers who mentioned for opacity linear transitions actually looked perfectly fine
+45:54
+um so you can see those are fading in like that and actually i thought we were gonna have a bit of a problem the spacing on these actually might be a
+46:00
+little bit too big and i'm happy we didn't run into another problem that i was a little worried about though
+46:06
+uh this is actually all the way in my split i'm wondering um or actually here just to show you a
+46:12
+little bit of how i plan on using these this could be like my default spacing or no this isn't my split
+46:18
+that's my split here we have my gap of 2m um so maybe yeah it was here so it wasn't
+46:24
+more spacing it's actually still not that bad i was a
+46:29
+little worried the prices were going to overlap um onto one another but i guess our margins big enough on those
+46:34
+our spacing and everything um is perfectly fine so we get to there that's still looking pretty good ideally
+46:40
+that wouldn't overlap on there um one thing you could do uh i don't know if i'm gonna like this
+46:46
+let's try it um on the hover here we could also give this a
+46:53
+text shadow of uh zero zero
+47:00
+do like a .25 m and an rgba uh because i want white now this is
+47:05
+another thing you can do with sas uh you don't you can do like a regular thing and then 0.25 and sas will make that an actual rgba
+47:12
+which is cool but we don't seem to be getting it let me just put this as 1m
+47:19
+oh it is there um it's really subtle so you can see it is coming up on those there um um
+47:26
+to make that two i want something a little like i don't want it to be really
+47:31
+big and we could use some positioning and stuff to try and get these all to be the same ideally i think it's just because my image sizes weren't
+47:37
+exactly the same probably because this shoe is at more of an angle than this one so ideally you'd come in
+47:43
+and make sure you have a template and you're dropping your shoes in there i exported these all at like the actual size
+47:49
+so maybe that was a little mistake on my part but overall i think you know it's good enough for what we're up to and we sort of have a little fall back there
+47:55
+um because if we drop that tech shadow you see how it's it's a little bit difficult to read it's not making like this big night or day difference but it
+48:02
+just it's a little fall back and you're never gonna notice it when it's on this light gray background
+48:07
+so that is a nice little way that you have a little interaction if you tab onto them too they're doing
+48:12
+the same little growing thing so that's kind of cool and i think that looks pretty awesome
+48:20
+so there we go perfection and now we can move on to our products and for this one so we can come all the
+48:26
+way down and it's our products and we're in a new area of our site now um actually i don't
+48:33
+know if we have to style anything on our products just because we come and take a look i mean this is my section which has the
+48:39
+padding on it i don't need to change the background color or anything uh the container is doing its thing this
+48:44
+is doing its thing now we're just coming down into these individual like the product itself and we're going to have a lot of fun in
+48:51
+here so here it's assuming.product um singular and so on here what i want
+48:57
+to do is let's give this first a background so we can see a little bit what's going on but i'm going to do this as a radial
+49:04
+gradient and just to make it easier we'll put it on multiple lines um and let's just do like a red to
+49:11
+yellow so we can see if it's working red to yellow like that and my semicolon goes here
+49:17
+there we go so it is working um but now instead of doing red to yellow which is it looks really ugly um but what i want
+49:24
+to do is a variable of uh we're going to do color inner you can see the red was the
+49:29
+the inner color and we're going to do a comma and yeah let's do lime green i want
+49:34
+something ugly and you don't have to do this with ugly colors um but it's one way of saying like you should set a variable here and it's
+49:40
+you know it's letting you know that you didn't or you could have a default that's actually nice but if you need to override
+49:46
+overwrite it you can so let's say lime green goes to purple like that
+49:57
+and of course this isn't working because here i need to have my var color outer so what happens when you
+50:04
+talk and code at the same time and this has to be
+50:18
+and after all that i have a space here too so a few mistakes in there but there we go a really ugly gradient in the
+50:24
+background so again this could be you could either put in some nice defaults it's probably a better idea that you have some nice
+50:29
+defaults as your first stage and your other you know your nice default could even be another variable
+50:35
+that's coming from your root if you have your color set up in your root so in this case though we're not going to
+50:41
+do that and i wish prettier wasn't automatically fixing that but we can see what's going on um here so we have my background
+50:48
+there obviously some padding on this is going to help so let's just do like 3m on the top and bottom i'm not going to
+50:55
+put any on the left and the right we're going to see why as we go through this and we've already put some
+51:00
+uh rounded edges border radius this one it's a bigger than our buttons we're going to go with a border radius of 3
+51:05
+because we want you know it's a bigger square so we have the tiny little button small corners this is bigger we can have
+51:12
+bigger rounded corners we have those circles there um so i think it'll help pull things together uh so border radius is three
+51:20
+uh last thing i'm going to do for now is do a actually i'm trying to think
+51:27
+i put padding no i think here i've just seen the text stuck to the sides we're going to go with the padding on all the sides
+51:33
+um and then we can do a text align i'm gonna do a text line center but i don't think we want one actually we're
+51:39
+gonna leave it like that um and hit save and a margin bottom would probably be good margin bottom
+51:45
+of say 3m just uh i i said we're going to keep them small
+51:51
+there we go i think that's better than the big three uh i forgot to put the text on the buttons but it's okay we can bring that in as we go because we're going to have
+51:58
+to jump into our html anyway uh to make some changes here um the first thing is i have my product
+52:04
+title uh so we are gonna keep this in here even though it's typography related it's really a title that's
+52:10
+linked to here so uh the title font size i'm just gonna stick with a
+52:15
+uh i will i'm going to stick with a i'm going to stick with the big value we could bring our clamp back in here too
+52:22
+uh we can give this a color of fff and a text shadow i'm going to do a 0 0 like a 0.2
+52:29
+m we can always play with that and then in our gba and again because this is sas i can actually put in um black and
+52:36
+then a point two it's gonna be too dark um i'm gonna
+52:42
+leave it like that but where our backgrounds are gonna change color so we'll see what those are going to look like after
+52:47
+that's not too bad actually i'm trying to think on small screen sizes actually
+52:53
+we probably are going to want actually then the line height there is terrible once again
+52:59
+so line line height can be one well probably 1.1
+53:05
+that looks better and i will do the text align center i said it wasn't but we're going to go with the text align center
+53:11
+on there because at small screen sizes that is looking a little better now you're probably saying it looks really ugly so we are going to come in
+53:17
+here and i have my product product product and we're going to call this one um should we give it by color
+53:23
+or by number i'm going to give it by color um and it could be something that's
+53:28
+you know this could even be coming from like a data attribute um which is also controlling the shoe that's coming in if
+53:33
+this was a more dynamic project if you're using a framework or something like that so your class name here
+53:40
+instead of using a class name you could be putting a data attribute on there that's pulling a specific image and at the same time you could have you
+53:47
+know with the image is you have your red shoes your blue shoes something like that so i'm just going to call this one shoe
+53:54
+red and again it does you know we could and this one will be shoe that's whenever our shoe white and then we have another we have this
+54:01
+shoe and the shoe that are both white but uh we'll go with the shoe blue just so we can add some blue colors in there um and then this is the idea
+54:08
+it's also going to come in actually while we're there and actually while we're here we can also come in and fix these
+54:13
+uh just to say bye now there we go that looks a little better then remember we put that spacing
+54:21
+we created our spacer class to so on here we could also come in to each one of these and after that that that we could add in
+54:28
+our spacing and just like that we get convenient nice uniform spacing
+54:34
+on all of them without having to write anything this is where these utility classes start coming in
+54:39
+as you're styling something up so that's looking pretty good it doesn't look terrible uh well the
+54:44
+background color looks terrible so let's go and fix those um i generally would save this for a little bit later um
+54:50
+i guess we could do the hero at the same time or we might come back and fix the hero um so what i'm going to do is do a shoe
+54:56
+red and we're going to say the color inner i'm just going red we're going to change these colors in a second but i want to
+55:02
+show you how this was going to work um and color outer can be orange and just like that that one
+55:10
+changes because remember the way we set this up was we have a product and our product wants to use the color
+55:17
+inner and the color outer but if they don't exist then it's going to go to the lime green and the purple and it looks like crap
+55:23
+but if we do decide that and this then the way this is nested is really important
+55:29
+so this you know depending on where the shoe red is declared
+55:34
+if it was declared inside the product it might not necessarily work it has to be declared on the product itself
+55:40
+or further out um because the custom properties get inherited so here
+55:46
+it's the product but it's also my shoe red and you know if you're using them you could also have like a product red
+55:52
+or whatever it is you want like that um but we can have our shoe red and bring in our colors
+55:57
+so we're also going to do that for our shoe and actually there's another color that we could bring in which is
+56:02
+our color accent and let's just make this one [Music]
+56:08
+lime green because that's an accent color just for a second and you can see that change that button so remember all we did the exact same
+56:14
+thing early early on when we set up our button here where we told it to be blue but if we set up it's looking for color accent
+56:21
+so it's saying what is color accent there is none it's going through my site it's not finding anything so it's staying blue
+56:27
+but then this button is inside of shoe red shoe red does have a color accent so
+56:33
+this is going to stop right there and grab it so using custom properties like this is super powerful
+56:38
+and you can really do a lot of customization you can even do light and dark modes with it do so much with it i'm so excited i love
+56:45
+using them in this way now normally i would have stuff in the root as well but being able to customize things on
+56:52
+like a component basis like this can be so useful and you can see because of the way i
+56:58
+didn't put colors i was just playing with the opacity so you can see like there is a slight color shift but it's coming from
+57:04
+the opacity change so what i'm going to do really fast here is i'm just going to um duplicate those
+57:09
+that's a shift alt and down and we can change this to my white
+57:15
+and blue whoops and really fast i'm going to speed this up so you don't have to watch i'm going to
+57:21
+update these colors alright so i brought all the different colors in but i haven't hit save yet i'm leaving that satisfaction uh for you to
+57:27
+be here with me on that one um so let's sit here and let's hit save and look at that all the colors update so
+57:34
+i've made really gentle gradients as you can see because i think gentle gradients tend to look a little nicer and then i've made an accent color that
+57:40
+just sort of punches out a little bit so any you know we set up our hero to be able to do something really really
+57:45
+similar so on the hero we could do the same thing um we could have our dot uh hero and say that just down here
+57:53
+is the accent color accent and in this maybe we would do i have another one actually out here
+57:59
+already i think it's the same i think i use this somewhere oh yeah it's this yellow color right here
+58:06
+and now that's going to update you so a nice cool way that you can update and have these um changing things you
+58:12
+could even have that with your background color here like maybe we could have had a class that um instead of shoe red shoe white or
+58:18
+we'd need those but we could have had a class that was setting up the gradient and um all of like our our custom property
+58:25
+defaults and then you know the dark this is a radial gradient on there too so we could have
+58:30
+done the same thing for our hero and use some dark gradients in there
+58:35
+um now this section is looking okay i'm actually we're really close but we're going to get into what i'm most excited
+58:40
+about in this entire tutorial and i was really excited about these custom properties i love being able to do this um and even this could be declared
+58:47
+anywhere you want so you can declare this higher in your css as well depending on how you want to stay organized i'm going to leave it all
+58:53
+the way at the bottom but you can really put it where you need to and what we're going to do is and you
+59:00
+notice like we've done all of this so far without even writing a media query which is really really cool
+59:05
+but we do need to get a little bit we will need a media query now because here it's looking really ugly
+59:11
+so i think one thing we can even do at the small screens that's going to improve things is on my product we have my title and if
+59:18
+we come and take a look we have our title and then we have the image here um and my image is the product image
+59:24
+um so even here like i wouldn't be opposed to nesting like this and saying any image that's inside of
+59:30
+product i think it's fine um this card is built in a very specific way but for this we're going to push it a
+59:36
+little bit and we'll do or you know we've set up a class we might also use it we're not pushing anything we're just using what we've done
+59:42
+so ampersand again is product so we have product image and i think what we can do is a
+59:48
+margin of negative five ish zero zero zero and just to have it stick out the
+59:55
+top a little bit it looks a little fancier doing that um the gaps here are getting a little tight so maybe our margin bottom could
+1:00:00
+be you know if we could just space them out a little bit more at mobile um so something like that you know it
+1:00:06
+looks a little bit more dynamic i think already i like that more we're reaching a point probably around here
+1:00:12
+ish where they're getting kind of lame-o looking
+1:00:17
+and for me the way i work with media queries it really depends on the site and a lot of the time it's where your
+1:00:22
+layout breaks and most things in the layout start breaking around the same time one thing could be line length it could
+1:00:28
+be that now is a good time to go to two columns um so things like that are what i generally look out for
+1:00:34
+now that doesn't mean this is breaking at 600 and this is breaking at 620 and this is breaking at 676. so i need
+1:00:40
+three media queries i'm going to just do the 600 then and fix everything at once you want to talk about maintainability
+1:00:48
+right so limiting the amount of media queries you have is important but i don't target specific devices i
+1:00:54
+target when my layout needs to change basically um so it's around 700 pixels
+1:01:00
+so 700-ish or let's just say we do 750 divided by that's not right let's start that over
+1:01:07
+again so say we do 750 divided by 16 46 we'll go fire you know 45
+1:01:14
+times 16 perfect 720. so right around 720 and we could play with that number maybe make it a bit smaller but right
+1:01:20
+around 720 and this is where i love um sas so at media
+1:01:27
+because you can nest this in here min width of 45 m
+1:01:34
+if you don't um m tends to actually be the safest thing to build media queries around
+1:01:39
+um just because if you zoom in and out you can have some differences between devices it's safari
+1:01:44
+that actually behaves misbehaves if you don't use ms when you're zooming in and out if you look in
+1:01:50
+google you can find an article by zell uh louis liu i think it's liu anyway so
+1:01:55
+uh who has a good article that examines the why this is good um so here we go that
+1:02:01
+is perfect and then in there what i want to do is quite a few changes to my image um so the first one is actually the first
+1:02:08
+thing we're going to do and this is the weird one no one's probably expecting this we're going to use a float as let's do a float left
+1:02:17
+um and let's make this bigger so we actually hit our media query oh you know what's going to help with the float left let's give this a width
+1:02:23
+of like 50 percent ah there we go so it's floating and
+1:02:28
+isn't like oh my goodness and i i just realized we're floating left i actually want to float this one to the right
+1:02:34
+uh boom there we go so floats kevin what are you thinking of using floats in 2020
+1:02:40
+uh this is what floats are made for to make text wrap around things huh you never would
+1:02:46
+have thought that eh um and actually i'm all for nesting these but i think i'm actually going to pull
+1:02:52
+this out from here um it's going to make life a little easier if i put my media query here
+1:02:58
+um and then i'm going to have an and image and we can wrap all this
+1:03:06
+like that um which is exactly the same thing i just had but it's just so i can put all the media
+1:03:12
+queries i need for anything inside the product in one place just so we don't have like four of them for four different things
+1:03:18
+it's a little bit of overkill um and if you're wondering what that's rendering to in the regular css let's
+1:03:23
+just go take a look uh product here we go so it's just doing the media query outside and then my
+1:03:28
+product image in there so it's one another just like the feature query where i could write the feature query inside
+1:03:35
+the same thing here with sas i can do my media query inside and sas will export it properly and do that right
+1:03:41
+there so uh the other thing i want to do is the text align on this looks like crap now so text align
+1:03:48
+left um i think i want to make my image a little bit bigger
+1:03:55
+and as i said this is what floats were made for floats were made to wrap text around content now it's not looking
+1:04:00
+fantastic yet and there is one problem with floats and what it is is if i put an outline
+1:04:06
+of two pixels solid i'll just put uh red because we'll see it um it's floating around this box that's
+1:04:12
+being created here and i don't want it to do that i want it to actually be able to go into these
+1:04:18
+empty spaces that are being created uh and we can do that with a really cool
+1:04:24
+feature called shape outside now shape outside can do a few different
+1:04:30
+things so i'm just going to do a really simple one of a circle uh let's just do i always forget
+1:04:38
+actually how this works we'll do 50 and see actually this is actually coming in now let's do like 30 percent there we go so you can
+1:04:45
+see my text is actually coming in on top of my image and it's going well what that's weird why is it doing that you can see even here it's actually working
+1:04:51
+pretty good on that one so let's open up my devtools because this is one of the coolest things in firefox's dev tools
+1:04:57
+let's make this a little bigger so you can actually see what i'm doing in here and we'll find my image and you see how here i have
+1:05:03
+shape outside and my circle and i get this little icon if i click on that there's the circle
+1:05:09
+and this is what the text is wrapping around is this circle that's right here so i can actually make that bigger make
+1:05:14
+that smaller so cool and there's also the shape margin so i can make a margin
+1:05:22
+based on that shape as well so here's my circle and that means there's like a 1m space
+1:05:28
+that the like the text can't come in within that circle so as soon as the circle gets within 1m it will push things away
+1:05:35
+one thing you'll notice here is it will not affect outside of the image so it always stops at the image's actual
+1:05:40
+bounds so just be aware of that that you can't make the circle bigger than your original image if you're doing a circle
+1:05:48
+the thing is you don't have to do a circle you can actually do a url and you want to guess what you're all
+1:05:54
+going to use the image itself and because it's a png it knows it's transparent um so this is
+1:05:59
+my shoe one uh go back a step image
+1:06:05
+shoot one dot png and as i said because it's a png it supports that and
+1:06:12
+uh i can't actually when it's the url we can't see that cool shape outside thing here in firefox um so let's turn off that outline
+1:06:18
+because we really don't need it anymore and it's not fantastic fantastic at this screen size but i just want to show you
+1:06:23
+like as this increases in size we can get this nice thing um where and
+1:06:29
+actually i think it could look a little better let's go back to the original title i think here we should do a text transform
+1:06:35
+i wanted to do this from the beginning i just sort of forgot and this can go back down to a one now i guess
+1:06:41
+um so see it here at the big sizes what's happening is the text is wrapping in around my shoe
+1:06:47
+um which is really really neat so when we get to see like even here that looks pretty cool right
+1:06:52
+um but i think the another thing that's going to improve this a little bit is if we change the margin
+1:06:58
+um i actually i don't know if we need the shape margin i'm gonna i'll comment that out for now um and we
+1:07:04
+might play with that uh but on the image itself i'm gonna change the margin so it's not sucked out the top anymore
+1:07:10
+um instead of sucking out the top i think what we want to do is suck it out negative five m zero zero so we could
+1:07:16
+have it suck out the right side instead uh so something like that it's also because it's floating sticking out the
+1:07:22
+bottom so that's also kind of cool um now it's breaking everything obviously at this size
+1:07:27
+um but we are getting something like around here like that's looking kind of neat right
+1:07:32
+um i'm just wondering here i seem to have some empty space uh on the top there
+1:07:40
+oh you see this is where my [Music] what i'm going to do here i'm going to cheat a little bit um
+1:07:47
+remember we use the spacer the spacing or i can't cheat too much though i'm
+1:07:52
+just trying to think here at small sizes i definitely want the shoe on top um because we use the spacing class
+1:08:01
+it is causing here it's perfect so it's small screen sizes is doing what i want but here it's actually adding a margin
+1:08:06
+on this um and not on the shoe which is fine so here i just need to be
+1:08:11
+product title we just want to get a little bit more specific so our inside my media query because we
+1:08:17
+want to keep it when we're not inside the media query so here we can add my and title
+1:08:24
+margin is a zero and there we go that's looking a little
+1:08:31
+bit better and i really like how it sticks out the right side there just a little bit and then when we come down and actually
+1:08:38
+you can see here we are running into some spots where the text is pretty much touching so i think what we will do is
+1:08:44
+bring this on and it's just going to make sure there's always a little bit of space and it won't it will never well this one's
+1:08:50
+broken because anyway we'll get to that in a second but you can see here it's working working working everything's fine
+1:08:56
+boom great um we are running into this issue of the shoe sticking at the bottom but what i
+1:09:03
+think we could do to actually um fix this i'm going to turn off i'm not going to turn off the mobile mode let's just shrink this down a bit
+1:09:10
+um i think i did it for everywhere else and then i said i wasn't going to bother but i think it would actually make sense
+1:09:16
+and we can get some really big titles coming in um if we did that here too so if we did a clamp on that let's say
+1:09:21
+three ram and do the same calc of a five viewport width plus one rim
+1:09:28
+and then have here i'm going to get like really big um because i think it's actually by
+1:09:35
+having a bigger title i think it's actually going to make it easier to get everything to fit in um so here you see how like here it's
+1:09:41
+small but then it's the text is growing growing growing it's still getting bigger um and because the text is bigger it's
+1:09:47
+actually making this whole area a little bit bigger and then we could just increase the margin bottom
+1:09:53
+on the entire product i don't want to increase it everywhere because it's already at 5m so i think i'm only going to do it in
+1:09:59
+the media query so here the margin bottom can become like nine nine
+1:10:04
+m or something like that um just so the shoe doesn't touch and it just spills out a little bit so the negative margin here
+1:10:10
+and it's sticking out the bottom just because it's floating and the rest of it's ignoring that and it's just one of those
+1:10:15
+happy accidents that that's so cool that that can happen because it floats it's one of those times i think the float adds something instead of just
+1:10:22
+being annoying so really really cool now you'll notice on this one it's breaking and that's because it's using the same
+1:10:29
+shape outside on this shoe as it's using for that one it's using the same one on this one and
+1:10:34
+i don't think that's an issue because they're close enough that it's actually not breaking anything and it looks
+1:10:40
+pretty good i think so for this one we will have to alter it a little bit though um so we
+1:10:46
+can leave that at a larger screen size but we'll want to shrink this down um so that one was my shoe
+1:10:54
+white this is where maybe it should have been shoe one two two shoe three i'm not sure um but we're going to stay inside my
+1:10:59
+media query and we can say and
+1:11:04
+uh actually no it's not um we're gonna stay inside the media query though i don't mind that this is
+1:11:10
+nested to white just we're raising the specificity a little bit but that's fine and we'll do a shape
+1:11:15
+outside of url image
+1:11:21
+slash shoe 2 dot png and i'm thinking if this was a bigger project what you could have is
+1:11:27
+actually like a shoe right and a shoe left and just have like a generic shoe class
+1:11:32
+um that could work one way or the other if that makes sense like one would be a shoe that's facing
+1:11:37
+to the right one would be a shoe that's facing to the left um we're also going to do a float right on this one
+1:11:45
+left i mean float left on this one shoe white is that what it was called oh
+1:11:52
+i'm saying she white i want to white and then i'm actually going to say the
+1:11:58
+we're going to raise the specificity a lot on this one that's okay shoe white and then my product image
+1:12:05
+uh yeah we'll just do a double class it's fine uh dot product image
+1:12:13
+uh we can select all that and just add our parentheses there so that should be working but it's not
+1:12:20
+again okay i made a mistake here with my nesting in my sass uh that took me a minute to figure out the way i found it actually i looked at
+1:12:26
+my regular css to see what it was output and i got this monstrosity so it's the shoe white inside of product but she weight's not
+1:12:32
+inside a product they're on the same level so either i could pull this media query out like make a second media query
+1:12:38
+outside or even put it inside this um but i'm actually going to just put an ampersand here
+1:12:43
+so it's really we're boosting specificity a lot you can see it's now moved over and the reason that's working is because
+1:12:50
+if we go look at the compiled css now it's product dot product dot shoe white so a product that has shoe white
+1:12:56
+um i don't like the shoe white here so i think what i'm going to do is say just a shoe that's on the left which does
+1:13:03
+mean and this could be like a double hyphen if you're really into them um which mean here my shoe white is
+1:13:09
+also a shoe left just because i think that makes more sense it's more reusable
+1:13:14
+it's not always the white shoe that will happen to be on the left and then you know this shoe would change
+1:13:20
+like the shoe number two but that's it could be just a generic shoe that's on the left and everything will be fine there
+1:13:25
+so i think this becomes a very reusable class it has high specificity but it shouldn't cause any issues
+1:13:31
+you sort of want this to overwrite stuff so i don't think that high specificity would actually cause any issues
+1:13:36
+but i will change the margin on it to be the opposite so 0 0 0 negative 5 m so it's pulling it all
+1:13:44
+the way the other way um it does look a little bit awkward here maybe my um
+1:13:49
+shape margin could be 2m on this one i don't think it's as nice but it's
+1:13:55
+still i think it's worth doing it so we do get the um you know we get this size i think that
+1:14:02
+actually works really well um it's just like the text rolling this way i'm not as big of a fan of but i do
+1:14:08
+think that it does work um and here you know it's still working all of these are working you can play with where the media query kicks in but
+1:14:14
+then boom it i say boom a lot and i really don't like saying boom but every time i'm editing my videos and i
+1:14:20
+say it i'm like oh why did i say that again and there we go we get these nice looking cards just like that
+1:14:26
+um and i think they look pretty good all the way down to the small screen sizes and just like that i think we have a
+1:14:33
+pretty nice looking site so in the end there i think it did lead to a really nice looking site and we got to
+1:14:38
+use some really fun and exciting css there the custom property usage is a way i really like using them
+1:14:44
+um the shape outside is just such a cool property now and it's something you can have a lot of fun with
+1:14:49
+and it sort of brings floats back into relevance which is kind of interesting um i don't think it's something you'll use every day but it's one of those
+1:14:56
+things that comes up in the right circumstance and you're just so happy that you know it exists and then you remember how to use
+1:15:01
+it and just it's one of the things i love about css is all these exciting possibilities that we do have now so
+1:15:07
+once again i want to say a big thank you to brad for having me here on his channel i'm just so humbled that he would invite me on here
+1:15:13
+to make a video for him so thank you very much brad i hope you guys really enjoyed this video i know it was a really long one i hope the ride was
+1:15:19
+worth it and whatever you do from here on out just try to keep on making your core on the internet just a little bit more
+1:15:24
+awesome
+
