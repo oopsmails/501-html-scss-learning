@@ -1,10 +1,13 @@
-@function calcImgPath($img) {
-  @return "../../11-basic-examples/11.2-modern-landing-page/img/" + $img;
-}
-
 :root {
   --img-location: "../../11-basic-examples/11.2-modern-landing-page/img/";
 }
+
+@function calcImgPath($img) {
+  @return "../../11-basic-examples/11.2-modern-landing-page/img/" + $img;
+
+  // @return var(--img-location) + $img; // this is NOT working because var() can only be transpiled at runtime!
+}
+
 
 *,
 *::before,

@@ -1,6 +1,46 @@
 # Amazing shoes
 The code that goes with [this video](https://www.youtube.com/watch?v=X1dz0xRbSJc&)
 
+
+
+## Knowledge Summary
+
+### There are whole bunch of *Syntax* to learn in this tutorial!
+
+- 00:20:20 why we have *@supports*
+- 00:22:28 why we have *.spacing>\*+\**
+- 00:27:35 *&>\**
+
+
+### Using @function to handle image path, by myself.
+
+```
+@function calcImgPath($img) {
+  @return "../../11-basic-examples/11.2-modern-landing-page/img/" + $img;
+}
+
+background-image:url(calcImgPath('shoe-3.png'));
+```
+
+- *@return var(--img-location) + $img;*
+  
+This is NOT working because var() can only be transpiled at runtime!
+
+- *background-image:url(var(--img-location) + "shoe-2.png");*
+
+This is NOT working because *It is not possible to create a composite url() value out of two or more strings. On top of the legacy url() value, which isn't even a proper CSS function*
+
+Ref:  
+https://stackoverflow.com/questions/42932294/css-attr-concatenation-with-url-path
+
+### Using var with different scopes
+
+```
+background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+
+```
+
+
 ## Notes
 
 01:15:25
@@ -14,13 +54,6 @@ The code that goes with [this video](https://www.youtube.com/watch?v=X1dz0xRbSJc
 54:51 - Using the custom properties we set up
 1:02:06 - Using floats and shape-outside
 1:14:26 - Outro
-
-### There are whole bunch of *Syntax* to learn in this tutorial!
-
-- 00:20:20 why we have *@supports*
-- 00:22:28 why we have *.spacing>\*+\**
-- 00:27:35 *&>\**
-
 
 ### Learning Notes
 
@@ -172,8 +205,89 @@ Pseudo element anytime you have a pseudo element you need to give it content to 
     }
 ```
 
-48:23 - Styling the our products section 
+- 00:49:18 using *radial-gradient*
 
+try *background: radial-gradient(red, yellow);*
+
+```
+background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+
+```
+
+- 00:51:25, *border-radius: 1em;*
+
+Using *border-radius* to decorate *backgroud* ... like to css buttons.
+
+- 00:54:33, re-using *spacing*
+
+- 00:57:24, variables with *component* scope
+
+```
+.hero {
+  --clr-accent: #faa700;
+}
+
+.shoe-red {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+.shoe-white {
+  --clr-inner: #fce4b3;
+  --clr-outer: #eac886;
+  --clr-accent: #2f4858;
+}
+
+.shoe-blue {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951;
+}
+```
+
+
+
+- 01:02:01, using *float: right;* + *width: 65%;*
+
+
+
+- 01:04:18, make text go into image "outline", using *shape-outside*
+
+```
+outline: 2px solid red;
+shape-outside: circle(30%);
+```
+
+01:05:01, firefox dev tool, to see and play around the *circle()*
+
+1:05:48  
+the thing is you don't have to do a circle you can actually do a url and you want to guess what you're all  
+
+1:05:54  
+**going to use the image itself and because it's a png it knows it's transparent**
+
+
+shape-outside: url(calcImgPath('shoe-1.png'));
+
+
+- 01:07:36, debugging empty spaces ...
+
+
+- 01:10:32, separating logic, left and right, *&.shoe-left*
+
+Nesting *.product__image* inside *&.shoe-left*
+
+```
+    &.shoe-left {
+      .product__image {
+        float: left;
+        shape-outside: url(calcImgPath('shoe-2.png'));
+        margin: 0 0 0 -5em;
+        shape-margin: 2em;
+      }
+    }
+```
 
 ## Temp:
 
