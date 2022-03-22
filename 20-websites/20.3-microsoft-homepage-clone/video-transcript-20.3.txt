@@ -1,0 +1,1233 @@
+
+Transcript
+
+0:00
+[Music]
+0:06
+what's going on guys so once in a while I like to do clones html/css clones of
+0:12
+certain websites or web pages we did Netflix we did a CBS mobile app we've
+0:17
+done Pluralsight so now we're gonna do the Microsoft comm homepage which was actually requested and we're gonna do
+0:24
+pretty much everything except this slide show here we're just gonna have a static image but we're gonna use CSS grid for
+0:30
+the the cards and cards down here we're gonna use flexbox we're gonna make it responsive so this is the actual site
+0:37
+and then this is what we'll be building okay so this is the exact page that we'll be building and you can see it's
+0:43
+very very similar some of the images have changed since I actually built the project but it is fully responsive so
+0:49
+we'll be dealing with media queries we'll have a little bit of JavaScript because once we get down to a certain
+0:55
+size we're gonna make this menu go away and then we have this button here that we click to open the menu on the side
+1:02
+okay also down here you can see now there's only two grid columns instead of
+1:08
+four same thing here if I keep making it smaller it can go down to 500 pixels now
+1:13
+it's all stacked and nice and neat menu still works and looks good okay so it's fully responsive again we'll be dealing
+1:20
+with flexbox we'll be dealing with the grid so lots of modern CSS as well as html5 so let's get started all right so
+1:30
+the only files that we need to get started our index.html style dot CSS and
+1:35
+then we need all the images you can see I have an in IMG folder here with all the card images we have card one through
+1:41
+card eight we have the Microsoft logo social media icons the showcase image so
+1:46
+what I'm gonna do is put a link in the description for you to download this I guess this boilerplate with the two
+1:52
+files and all the images just in case you want to follow along which I would recommend okay so I'm also gonna keep
+1:59
+the final project open so we can reference it if we need to so let's jump into index.html and just create a
+2:06
+boilerplate with Emmet so exclamation Enter and just tab down to the title here and
+2:12
+let's say Microsoft official homepage and we want to link in our stylesheet so
+2:20
+we'll add a link tag to style.css and as far as the javascript there will be at
+2:25
+just a tiny bit just a couple lines so that we can click the menu button and have the menu slide open on on smaller
+2:32
+screens so we're just going to put that right in the HTML just add a script tag when the time comes all right so let's
+2:40
+create a container class so I'm gonna be using Emmet throughout this throughout this video so we'll say dot container
+2:47
+enter which will give us a class of container and inside here we want our navbar I'm just gonna put a comment here
+2:53
+and let's use an html5 nav tag and let's give it a class of main - nav ok and
+3:01
+then in here we're gonna have a few things we're gonna have the logo the main menu and then the right menu and
+3:08
+the right menu is this right here just these two icons which don't actually do
+3:13
+anything but we're gonna put them there anyway so let's start off with the logo so we have our image and I'm gonna give
+3:19
+it a class of logo and the source is going to be in the image folder and its logo PNG and for the alt will just say
+3:28
+Microsoft and then right under that let's put a ul and unloaded list with a
+3:33
+class of main menu and we're gonna have some list items here with a link that
+3:41
+isn't going to go anywhere so I'll just put a number sign and then I'm just going to copy this down let's see 1 2 3
+3:47
+4 5 6 so the first one is gonna be
+3:54
+Office second one windows
+4:01
+surface Xbox deals and supports all
+4:13
+right so that's our main menu and then right under that we're gonna have the other menu which I'm going to call right
+4:20
+menu now we are going to be using font awesome icons so I'm just gonna jump
+4:25
+back into Chrome and search for fonts let's say font awesome five CDN or you
+4:32
+can just go to font awesome comm but if you do that you do have to sign up and log in and create what's called a kit if
+4:38
+we do this we can just choose either the JavaScript or I'm just gonna grab the CSS so this right here this all dot min
+4:46
+I'm gonna just copy the link tag and put that right above where we brought in our
+4:52
+style CSS and then down in the right menu here we're gonna have a list item
+4:59
+and inside here we'll have an a tag and inside that we'll have an eye tag with
+5:05
+an icon so let's do a class of FAS font awesome and then FA - search and then
+5:12
+what we'll do is just copy this list item down and then this one is gonna be FA - shopping - cart so I want to check
+5:22
+this out so you can either open the HTML file on your file system or you can use the live server extension which is what
+5:29
+I'm doing so I'm gonna say open with live server and there we go so we can see the logo we have all of all of our
+5:36
+links and we have our two icons so before we add any more HTML let's go
+5:42
+ahead and start to style this well we'll add our base styles for the body and stuff like that and style the nav bar
+5:49
+all right so let's jump in and and I'm not going to do the responsive navigation until the end the little
+5:56
+hamburger menu and all that stuff so in our style CSS let's say for everything
+6:02
+we want to set the box sizing - border box so that the padding doesn't affect
+6:09
+the width or anything like that and then we want to set the margin to 0 and the in the padding to zero so we're
+6:16
+basically just adding a reset on every element and then for the body will set a
+6:23
+font family and we're gonna use this
+6:28
+what is it see go see goo I can't and a lot of pronounce it Segoe UI -
+6:33
+homogeneous verdana' sans-serif' so that's the font family I'm using and then background is going to be white and
+6:41
+let's set the color of the text to black so I'm using hexadecimal here and then
+6:48
+we'll set the font size to 15 pixels and let's set the line height to will do 1.5
+6:56
+for the line height alright and then we'll just do some base styles like for links let's make the color of the links
+7:04
+a little lighter than the black which I'm going to use two six three times
+7:10
+okay and then we want to take away any underlines so text decoration we'll set
+7:15
+that to none okay so if we look at that so far should look like this and then
+7:22
+for any unordered list I'm gonna take away the bullets so we'll set list the style to none okay and then we have a
+7:32
+container class which wraps around everything so we want that to take up almost the whole screen so we'll do with
+7:39
+90% but we do want to set a max width we don't want it to pass a certain width so
+7:45
+the max width I'm going to set to 111 hundred pixels and let's set the margin
+7:52
+auto which will give it even margin on all sides which we'll put it in the middle okay so if we take a look you can
+7:59
+see that it takes up it'll take up 90% of the screen up until you know 1,100
+8:07
+pixels which is the max and that's where it'll stop okay so let's jump back in
+8:13
+here and let's start to style the navigation so I'm going to put a comment
+8:19
+here just say nav so we have a class of main nav and for the navigation I usually
+8:27
+like to use flex for this just to line it up nicely so let's set this to
+8:34
+display flex and what this will do is it'll set all the inner items to flex items and align them in a horizontal row
+8:41
+and if we look at main nav inside we have three items the image the UL this
+8:48
+UL and this UL so it's just going to basically set all of those two flex items and then we can use properties
+8:55
+like align items and we want to Center everything okay I'm just going to see
+9:02
+what that does for us so if we save that now you can see everything is lined up horizontally not the list items because
+9:09
+remember those are in the UL those aren't directly in the main nav class
+9:14
+alright we'll do we'll work on those after but let's set some other things here so the main nav I'm going to set a
+9:21
+height of 60 pixels and let's set a
+9:26
+little bit of padding so we'll do 20 pixels on the top and bottom so 20 and then 0 on the left and right and then
+9:33
+the font size I'm gonna set a little smaller we'll do 13 pixels okay so if we
+9:41
+take a look at that you know what let's let's actually do this should be able to
+9:49
+fit both of these okay now the before we do anything else I want to handle the
+9:56
+the unordered list here I want this to be a flexbox as well because everything
+10:01
+within it should should be row should be aligned horizontal so let's take the
+10:08
+main nav ul and let's also display that
+10:13
+to flex which will set all the list items to be in a horizontal row
+10:18
+alright and then let's see for the main nav which is displayed flex see all the
+10:26
+space over here we basically want to distribute that in between the Flex items so to do that we use justify
+10:33
+content and we have a value called space between so if I save that it's just going to put
+10:39
+all in the equal number of space in between now the main menu I want to be
+10:44
+pushed over here next to the logo so what we can do is set the main let's say
+10:52
+main nav and then take the UL with the class of main menu and let's set that to
+11:00
+Flex one and then that will push over there but it's too close to the logo so
+11:06
+let's also add a margin left of 20 pixels and push that over okay and then
+11:15
+the logo is is too big right now if we look at the you know this page here it's
+11:21
+much smaller and by the way this my resolution on my machine is manin so
+11:30
+this might look a little smaller on my screen than it looks on yours so let's
+11:36
+deal with the logo I'm gonna go right here and say main nav there's a class of
+11:42
+logo and I'm gonna set the width of that to 110 pixels which will make it much
+11:50
+smaller all right and then for this for
+11:55
+the list items here actually I didn't put a link yeah I did put a link there's for the list items here we want to
+12:02
+separate those so let's go to let's go
+12:08
+right here and say main nav ul Li and set the padding to zero top and bottom
+12:17
+and then 10 pixels on the left and right which is gonna separate those out from each other okay and then when I hover
+12:25
+over these I want to have a little underline effect so let's say let's go
+12:31
+right here and take the main nav ul Li a
+12:36
+and let's add a hover so for the hover
+12:42
+state of the link I'm going to add a border border bottom and that's gonna be two
+12:51
+pixels solid and let's do our two six three times so now if I go and I hover
+13:00
+over we get this underline I do want that I do want to push the underline down a little bit so on the link let's
+13:08
+just grab this and say on the link we want to set padding-bottom to two pixels
+13:16
+so that way the line is pushed down a little more okay so I think that we
+13:23
+should be all set for now I mean we will be do we will make it responsive will add the hamburger menu because right now
+13:29
+you can see on small screens it just goes off the page which obviously we don't want but for now this is good so
+13:35
+let's go back to our HTML and what we want to work on next is this this part
+13:41
+here which is the showcase so in our HTML we'll go back we'll go down under
+13:47
+the nav let's put a comment here say showcase and we're gonna use a header
+13:54
+html5 header tag give it a class of showcase and then in here let's have an
+14:01
+h2 and we'll say surface deals and then
+14:07
+a paragraph and I'm just going to paste this text in of course you can copy it
+14:13
+or you can copy it from I should have the code in the description probably a code pen but we'll just put that text in
+14:19
+and then we want a button that says shot now or a link so let's put an a tag here
+14:25
+with a class of BTN so we'll style it as a button it's not actually gonna go anywhere and then we'll have some text
+14:34
+that'll say shot now and then I just want to have a chevron icon so we'll put an eye tag fa s fa Evren - right okay so
+14:45
+if we save that that's what its gonna look like which looks like crap so let's go ahead and style it so in our CSS go down let's
+14:55
+see let's actually let's style the button first so BTN is a class basically a utility
+15:01
+class that we can use anywhere so we'll style that first and for that we want to
+15:07
+make sure that we have a cursor that is a pointer when we hover over it and we
+15:13
+want to display it as an inline block
+15:18
+and I'm gonna set the border to zero I'm
+15:24
+gonna bold the font so font weight is gonna be bold and we want to add some
+15:31
+padding so we'll do 10 pixels top and bottom 20 pixels left and right we can
+15:37
+see what that looks like so far we want to add a dark background so the background we're gonna use two six three
+15:45
+times and then make the color of the text white and let's set the font size
+15:51
+to 15 pixels okay so there's our button style now when we hover over it I want
+15:58
+it to have some kind of effect so I'm just going to lighten the opacity a little bit so we'll say for the class
+16:03
+button in its hover State we're gonna set the opacity to 0.9 so just lighten
+16:11
+it's just slightly so we get that little effect all right so that's that now we're gonna go ahead and do the showcase
+16:21
+so say showcase with a class of showcase
+16:28
+and we want we want this showcase to have a width of a hundred percent of its container which is which is the actual
+16:35
+container class so it should just you know reach a hundred percent and then we're gonna set a height of 400 pixels
+16:43
+for this now the background is going to
+16:49
+be an image so we want to set that to URL and the image we want is going to be in the image folder and it's called
+16:58
+showcase dot JPEG now I have some props some background properties we could
+17:04
+either add them in separate properties or just add them here I'm gonna add them here so we'll say no-repeat okay we
+17:10
+don't want it to repeat a position at Center Center and we wanted to cover that area so let's save
+17:16
+that and now we have our background image now for the items inside let's
+17:22
+display them as flex items and if I do that right away it's gonna align them
+17:27
+into a row into a horizontal row which I don't want I want them to be in a column
+17:33
+which is vertical so let's set the Flex direction to column as soon as I do that
+17:40
+it goes back to going vertical now I want to align everything to the center
+17:46
+so we want to use a line items Center and let's also set actually yeah let's
+17:56
+save that and then I just want to make sure the text is also going to be aligned to the center so we'll add that
+18:02
+as well I want that I want this to be aligned not in the center because it'll
+18:08
+still be kind of within this image here I want it to be down here so we're gonna use justify content and we're gonna set
+18:16
+it to Flex end okay we have flex star which is where it is now and then flex end if I save that it pushes it down to
+18:23
+the very bottom however that's too low so I'm gonna also add here let's do
+18:30
+padding bottom for the showcase set that to 50 pixels and we also want a margin
+18:38
+for things under it so I'm gonna set a margin bottom to 20 pixels okay so that'll push that up a little
+18:44
+bit and I think that we should be all set for the showcase itself now these
+18:51
+are kind of squished together so let's actually take the showcase h2 and the
+19:00
+paragraph okay so we're styling both of these showcase paragraph and for both of
+19:07
+these I just want to add a margin to the bottom of 10 pixels and that'll just
+19:14
+kind of separate things out okay so that looks pretty good actually the button
+19:21
+though let's add a little more space here so I'm gonna grab the showcase and then the button inside the showcase
+19:28
+and let's set margin top to 20 pixels
+19:34
+okay so now we're going to start to work on the cards which are these right here
+19:41
+which by default there's going to be four okay but then we're gonna add media
+19:46
+queries so when we get to 700 there's 2 and 500 there's one so we're gonna actually use the grid for this here but
+19:54
+of course we need to do the HTML first so let's jump back into our index.html
+19:59
+whoops and then we'll go under our showcase which is the header right here
+20:05
+and I'm just gonna make this a little bigger
+20:11
+alright so we're actually gonna have two cards sections so put a comment here and
+20:17
+say home cards just one and let's use a section html5 section tag here and give
+20:25
+it a class of home cards and inside here we're going to have a div which is gonna
+20:32
+be each group this is gonna be set to grid display grid and then each div will
+20:37
+be a great item and in each grid item we'll have an image which is gonna be
+20:43
+let's say image slash card one JPEG
+20:50
+I'll just leave the alt blank and then let's do an h3 we're gonna say new
+20:56
+surface pro 7 and then a paragraph so
+21:02
+I'm just gonna grab the text again I should I'll have the code in the description so if you want to just copy the text you can do that and then under
+21:10
+the paragraph the last thing we want inside each grid item in each div is a link so let's put a link here that just
+21:17
+goes nowhere and say learn more and then we'll have a chevron write icon so FA s
+21:25
+fa dash Chevron - right all right so if I save
+21:32
+that this is what it's going to look like now we have what three more cards
+21:39
+because there's going to be four in a row so I'm actually going to paste these in because it's the same thing it's just different content so let me just grab
+21:46
+these three divs and again if you want to grab it from the code you can so we
+21:52
+have card one that we just did and then we have another div with card - okay so
+21:58
+we have different text as well just to make it look real and then another div
+22:03
+here card three and then we have our last one so if I save this we just have three element three divs on top of each
+22:11
+other so let's jump into our CSS and we want to use the grid here to style this
+22:16
+okay so let's see let's put a comment
+22:22
+we'll say home cards and I can make this
+22:27
+smaller
+22:33
+okay so home cards let's give a class of home - cards and to use the grid we want
+22:42
+to set this to display grid not grudge grid if I do that nothing happens
+22:49
+because we have to let it know what columns or rows or whatever we're doing so we're gonna use grid template columns
+22:56
+and with this we could set each one to like like we could do you know 50 pixels
+23:05
+50 pixels if I did that it'll give us two two columns that are 50 pixels wide
+23:11
+which is obviously not what we want if we wanted four we would just do 50 pixels 50 pixels that'll give us four
+23:19
+that are 50 pixels wide now I'm going to use something called a fractional or a fraction an F our unit which are
+23:28
+basically just slices of of the grid container so for instance if I do one fr
+23:35
+if I save that that's going to put each one in one column if we do two of
+23:41
+these f1 FRS then we get two columns if we do three then we get three if we do
+23:49
+one in five four we get four which is what we want now instead of doing it
+23:56
+like this we have a function called repeat we can use and we can say repeat four times one of our and we get the
+24:04
+same result now the reason that it's kind of going off the page here is because of the images images are always
+24:11
+going to go out of their container unless we set the width to be restricted
+24:17
+to be a hundred percent of the container so let's say home cards image and we
+24:23
+want to make sure that we set the width of these images to a hundred percent of the container that way they don't go
+24:28
+outside of that column that grid column now I don't want these to be right
+24:33
+squished up against each other so we're gonna use a property called grid gap so
+24:41
+with the grid system we don't even have to use margin to separate out the the actual items we can use grid gap and
+24:47
+we're gonna set that to 20 pixels and save and now you can see we have some space in there so the grid gap is 20
+24:53
+pixels and we also have 20 pixels margin bottom on the showcase so these are even
+24:59
+the spacing here and then the images I also want some space underneath so let's also add a margin bottom there of 20
+25:09
+pixels push that text down a little bit and then the h3 also wants with spacing
+25:15
+so we'll say home cards h3 and let's just do 5 pixels for the margin bottom
+25:23
+there and then these here these links we
+25:29
+want to handle those so let's say home cards a and I want to display these as
+25:37
+an inline block because they're displayed inline by default and we want
+25:44
+to be able to add padding top ten pixels and let's set the color to
+25:53
+hexadecimal value of zero zero six seven b8 which is a bluish color and then
+26:03
+we're gonna set I want them to be uppercase so we'll set text transform to
+26:08
+uppercase and let's see the last thing
+26:14
+we're gonna do here is just set them to be bold so we'll set the font weight to
+26:20
+bold like that okay and it's kind of squishy it looks better if you stretch
+26:26
+it out like that once we hit like seven hundred pixels we're gonna change this switch some things up so that for
+26:33
+instance these are and there's only two columns and so on but we'll do that after we'll do the media queries after
+26:39
+so let's see the when I can I hover over
+26:46
+one of these links here I want the chevron to kind of push out a little bit
+26:51
+so what we'll do is take the home cards and say when we hover over the link when
+26:57
+the link is in the hover state then we want to take the icon and we want to just add a margin left to it of 10
+27:04
+pixels okay so that way when I hover over you can see it just kind of pushes
+27:10
+out a little bit so that takes care of the first set of home cards now we want
+27:15
+the Xbox area which is this so let's add that HTML just going to make this a
+27:22
+little bigger for now so we'll go let's see we have our section so we want to go
+27:30
+under this section and then we'll have our Xbox section we'll give this a class
+27:37
+of Xbox so in here we're going to have a div at the class of content it's
+27:44
+basically we're gonna have a background image and then we have this element with the content inside of it
+27:49
+which is going to have an H to say xbox
+27:55
+game pass Ultimates and a paragraph which I'm going to just grab real quick
+28:04
+and then under that will have an a tag and this is going to be our button so we
+28:10
+want our BTN class here okay and then inside here we'll say join now and again
+28:19
+I want to have a chevron icon so FA s fa - Chevron right okay so if I save that
+28:29
+you can see this is what it looks like here now I do want to add some margin to the home cards I forgot to do that so in
+28:37
+our CSS right here home cards let's say margin bottom and let's do I think 40
+28:46
+pixels is what we want yeah okay and then that should be it for the Xbox HTML
+28:53
+so we can actually go back to the CSS and then let's start on that so I'll make this smaller just so we can see
+28:59
+what we're doing here and let's put a comment here this is the Xbox styling so
+29:10
+the first thing we want to do is the Xbox class itself so I'm going to give
+29:17
+this a height of 350 pixels and we want
+29:22
+to width of a hundred percent okay and
+29:27
+then just set a background image so we'll say background:url and the image
+29:33
+is going to be image oops we need quotes here image / Xbox PNG and we're gonna
+29:44
+set some properties here so no-repeat Center center slash cover
+29:52
+and save okay so now we have our background image now we have to style the content that is within it so
+30:00
+remember we have a class of content so Xbox and then we want the content class inside of that and I'm just gonna set a
+30:07
+width of 40% because I don't want to spread all the way across so that kind of contains it to the left here and then
+30:15
+for the padding let's do 50 on the top zero zero and then 30 pixels on the left
+30:23
+just to push it down and out okay and then the paragraph let's see let's say
+30:29
+Xbox paragraph and I'm gonna set a margin of 10 let's do 10 0 20 just to
+30:41
+kind of break this up a little bit and then that should be it yeah so the next
+30:48
+thing let's see what's after that so we have another set of cards after that and what's nice is we can use the same
+30:55
+classes and same styling so I'm gonna go back into our HTML and basically we're
+31:05
+gonna have this the same thing we have here with with our home cards we're gonna do four home cards too except
+31:12
+they're gonna be just it's just going to be different content so I'm gonna just copy this and paste it in so we're gonna
+31:20
+go under Xbox under the section here and paste it in and notice that it's the
+31:25
+same exact thing the class is home cards the only difference within the divs is the content so different image different
+31:33
+text okay so I'm gonna save this and if we take a look it's pretty much already
+31:38
+styled we just we just need to separate this here so let's go back into our CSS
+31:44
+and for the Xbox class let's add a
+31:50
+margin bottom of 40 pixels
+31:56
+actually let's do 20 pixels there so
+32:04
+that's all styled after that we have this area which I'm just calling carbon
+32:10
+because it's committing to carbon negative so that's going to have a class of carbon so we'll go under the home
+32:17
+cards too and it's put a comment here say carbon did I add a comment for ya I
+32:25
+didn't okay so for this here let's say
+32:30
+section give it a class of carbon and then we'll have a class of content so
+32:38
+it's kind of like what we did with the Xbox and we'll have an h2 will say committing committing to carbon negative
+32:49
+and then a paragraph which I'm going to grab the text for and then under that
+32:58
+we'll have an eight it's actually we'll just copy we'll copy this right here
+33:04
+this join now and put that here except
+33:10
+it's gonna say learn more and I don't know why this is going to an a tag that
+33:15
+should be a number sign alright so if I
+33:21
+save that let's take a look okay so what it looks like now let's style it so
+33:27
+we'll jump into our style sheet here and it'll just make this smaller say this is
+33:38
+the carbon section
+33:43
+okay so for this four-carbon we're going to set the height to 350 so it's
+33:54
+basically just like the xbox one height and width of 100 yeah 100%
+33:59
+and then a background image so this is
+34:09
+image / carbon jpg no-repeat Center
+34:18
+Center and cover okay and by the way
+34:24
+this is the background repeat' property this is the background position this is the background size now as far as the
+34:32
+the content inside let's style that so let's say carbon and we have our content
+34:42
+which wraps around the h2 the paragraph and link and I'm going to set the width
+34:48
+of this to 55% okay and then to position
+34:54
+it let's do padding 100 pixels from the top okay so we'll do 100 pixels top and
+35:02
+then 30 on the left and that will position it now as far as the colors
+35:08
+here I want to change the color of the text in the button so I think what I'm gonna do is put a class a utility class
+35:16
+on the carbon section right here called dark meaning that it's it's a dark
+35:21
+background so we need light text and a light button so back in our style sheet
+35:26
+I'm gonna put this up at the top because it's basically like a utility kind of like the button class so we'll say dot
+35:33
+dark so if it has a class of dark then we want the color to be light because it
+35:38
+means it has a dark background so the color is going to be white and then
+35:43
+let's see in addition to that we want to
+35:48
+set the button so we'll say if it's dark and then there's a button inside of it
+35:57
+then that button background we want to be light so I'm gonna use F for three
+36:03
+times which is light gray and then the color of the textile set to a dark color so triple three now if I save that and
+36:11
+this is this is light here we want to separate this stuff out a bit just like
+36:18
+we did with Xbox so I think what we can do is go to where we have our Xbox
+36:25
+paragraph and let's just also add in here our carbon paragraph and save and
+36:33
+now that will add this margin here to this as well and then I'm pretty sure
+36:38
+that's all we need to do as far as the carbon area goes so next we have this
+36:45
+which is this follow or social area so let's go back to our HTML and let's go
+36:53
+under the section here and this is going to be the what are we gonna call this
+36:59
+let's call this follow so put a comment here we'll put a section with a class of
+37:07
+follow and we'll have a paragraph that says follow Microsoft and then we're
+37:16
+gonna have some links and then these links are just gonna have them go to
+37:22
+like social media sites so HTTPS
+37:28
+facebook.com and then inside the link here we're gonna have the Facebook icon
+37:34
+well not icon it's actually an image you could use font awesome icons but I'm
+37:39
+just using images so let's put an image tag and let's have this go to IMG / and
+37:47
+this is going to be social FB okay and then for the alts we'll just
+37:54
+say Facebook and then we're gonna do the same for Twitter and LinkedIn so I'll
+37:59
+just copy this a tag down twice so this one will be Twitter and then let's do
+38:07
+social - Twitter for the image change
+38:14
+that to Twitter and then this will be LinkedIn and it's a social - LinkedIn
+38:25
+and this will be LinkedIn okay so we'll save that and you can see
+38:33
+the image here and the follow Microsoft so we want to style this a little bit we want this we want the follow Microsoft
+38:39
+to be in line with the rest of these so let's use flex for that so in our CSS
+38:45
+under carbon let's do our follow styles so we'll take follow and let's display
+38:55
+flex and as soon as I save that it's going to turn it into a flex row which
+39:01
+is what we want but we want to align the items to the center so if I do that you
+39:07
+can see now the paragraph is in the middle here let's also do a justify
+39:17
+content flex start which will make sure it's aligned at the beginning and then
+39:22
+for the margin for the margin we're gonna do 30 pixels top let's do 0 30
+39:30
+pixels and save and now yeah that looks
+39:36
+good we do need to push we need some spacing in between all this so what I'm gonna do
+39:42
+is take the follow class and say everything within it so we'll use an asterisk asterisk care and just give it
+39:48
+a margin right of let's do 10 pixels save and now it's going to space this
+39:55
+stuff out for us okay so that's good next we have these two areas now this is
+40:03
+basically a one big footer however I'm calling this right here with the you ELLs four links so this will have a class of
+40:11
+links this whole thing and then this will have this will be the footer this part here so let's go to our HTML and
+40:18
+let's add will just add both of those at once alright so under this section here let's
+40:24
+say links and this is going to be a section and give it a class of links and
+40:33
+then we want to have a links in ER and the reason I'm doing this is because there is going to be basically a
+40:40
+container that stops the content here and here however I want the background
+40:46
+color to extend all the way out so we don't want to actually actually know
+40:51
+what one thing I did wrong is I have I still have it in the container you can see this this is the ending of the container and I don't want that because
+40:58
+then the color the background color would end here and I wanted to extend all the way out so for that then I
+41:06
+wanted I want this div the container div to end here after follow I don't want it
+41:14
+to I don't want it to go around the links here so we're gonna have a class in here called links - inner and then
+41:24
+we'll have all of our you ELLs so I'm going to just paste these in so each unordered list is just gonna be you know
+41:32
+have allies this first one is going to be the title so it's gonna be an h3 and then the rest will just be links so we
+41:39
+have that one and then I'll just grab the rest here again you can copy this
+41:45
+from the code if you don't want to type all this crap out okay so I paste in all the you ELLs and like I said we're just
+41:53
+gonna do the foot or two so underneath this section say footer and we're gonna
+42:00
+use the html5 footer tag for this and we'll give it a class of let's go I guess let's do mein - footer
+42:11
+and in here is gonna be this part so
+42:16
+we're gonna have again it's gonna extend all the way out so we don't want it to be in the container and we do want to
+42:24
+put a limit on how far it goes out like this content we don't want to keep going out here so we're gonna set an inner
+42:30
+class here as well so let's say footer - inner actually we'll just call this
+42:36
+class footer so we have footer and footer inner and we'll have a div so
+42:44
+this div is gonna be this right here this little icon the globe icon with the
+42:49
+English so let's put an eye tag with FAS
+42:56
+and let's do FA - globe and then with
+43:01
+font awesome you can make icons bigger with FA - 2 X 3 X 4 X so we're gonna do
+43:07
+2 X so that'll give us the globe icon and then next to it we're gonna say English English and then in parenthesis
+43:17
+the United States okay and then under that div will be a UL and this is going
+43:25
+to have all the the other links which I'm just gonna grab real quick oops
+43:30
+those in here okay so we have just a bunch of links and then at the bottom we
+43:36
+just have this HTML entity for the copyright symbol excuse me and then
+43:41
+Microsoft 2020 so that should do it for the HTML so if we take a look at it it
+43:48
+doesn't look very good so we have quite a bit of styling to do here so let's jump into style.css and go underneath
+43:57
+our follow and let's start with links okay so first thing we're gonna do here
+44:04
+for links is set the background and we want the background to be a grey
+44:10
+which we're gonna do f2 three times and then the color of the text is going to be a little lighter than black it's
+44:16
+gonna be six one three times guys if I
+44:22
+save that you can see now we have the gray background the lighter text we're gonna set the font size to be smaller as
+44:29
+well let's do 12 pixels and then overall
+44:34
+padding for the links section is gonna be 35 on the top and bottom okay so I
+44:41
+save that that's what it's gonna look like now for the links inner I want that
+44:48
+to be a grid okay so if we look at this links inner if we set this to display
+44:54
+grid every direct child will be a grid item and every direct child is a ul
+45:00
+right because we want the you ELLs to be aligned in grid columns so let's set
+45:07
+links inner actually before we even do
+45:12
+the grid stuff let's set a max width because again we don't want the content to go all the way out we wanted to have
+45:20
+a max width of the the same number as the container above which is 1100 pixels
+45:25
+and we want it to be aligned in the middle so let's do margin 0 on the top
+45:31
+and bottom auto on the left and right to make sure it's in the middle and just add a padding of 20 pixels on the left
+45:39
+and right okay so now we'll go ahead and display grid and we could probably you
+45:46
+know let's make this smaller all right
+45:52
+so if I display grid I'm gonna save this and it's not going to do anything because again we need to set our grid
+45:58
+template columns and we want to have 6 there's 6 you ELLs so we want to do
+46:05
+repeat 6 times 1 fraction or 1fr make
+46:12
+this a little bigger
+46:19
+okay so once I save this now they're gonna align in a grid which is what we
+46:24
+want and then for the grid gap which is the space in between we'll do ten pixels like that let's go ahead and align the
+46:34
+items to flex start and then let's set the justify content to Center all right
+46:44
+so you can see that it kinda they kind of just extend in and out when we hit a certain point like 700 we're gonna
+46:51
+change the grid template columns but on large screens that looks fine like I
+46:57
+said we'll do the media queries after so let's see these are too close together
+47:04
+these list items so let's take links Li
+47:10
+and let's really spread out the line height to say 2.8 like that and then
+47:19
+let's set the color of the actually that should be fine right you know yeah we'll
+47:27
+keep that as is alright so I think that that's that's good for now until we get to the media queries now let's do this
+47:33
+footer part down here so we have a class
+47:40
+of footer and I want the background
+47:47
+background is going to be the same gray which is f2 and color same color as the
+47:57
+links okay good font size
+48:04
+12 pixels and padding 20 on the top and
+48:10
+bottom good and then we also have a
+48:15
+footer inner so it's a footer - inner and we're gonna set just like the links
+48:24
+we're gonna set the max width to 1100
+48:31
+and the margin to 0 auto which will put
+48:36
+it in the middle padding let's do 20 0
+48:42
+20 and I'm gonna display as flex now the
+48:49
+this footer enter only has two inner elements which is the div and the UL so the UL we're also going to want us
+48:57
+display this as flex so that these list items will will show in a row let's see
+49:04
+so we want to align items Center and let's justify the content to the space
+49:11
+between so any remaining space will go in between the two elements here and
+49:16
+they're also aligned Center now let's do
+49:24
+let's do the UL so we have our links say
+49:31
+links ul not links footer P well and we
+49:37
+want to display as flex okay so they'll put them all in a row now when this gets
+49:48
+smaller I actually want it to wrap I want these to go on top of each other so
+49:54
+we can use a property called flex wrap and set that to wrap and save and now
+50:01
+they'll just kind of go on top of each other and they don't go out of the screen it doesn't look great but I mean
+50:08
+it's it's you can see see all the links and it doesn't go off the screen and
+50:13
+it's it's workable and it's what the the actual Microsoft site does so let's see
+50:20
+this looks horrible so let's do the list items for our list item let's set margin right to 30 pixels
+50:33
+and we'll do a margin I'm gonna set margin bottom 20 on both the Allies and
+50:41
+on the div which I haven't added yet so let's say footer div so the footer div
+50:51
+is this right here and notice actually let me just do this first so I'll save
+50:58
+now I'm just gonna stretch this out just
+51:03
+show you something so it's notice that this is not aligns with this it's pushed
+51:08
+down more to fix that I'm gonna set that div right here the footer div to display
+51:15
+flex and then also just set a line items Center which will put it right in the
+51:22
+center along with the rest of these all right let's just leave this like that
+51:28
+for now all right so let's see what else do we have to do here I think that's
+51:36
+really it well let's push this out see how this icon is like right on top of
+51:41
+the word English so we'll take let's see
+51:47
+here we'll say footer div icon and just add a margin right of
+51:57
+let's do 10 pixels okay so I think that
+52:03
+looks pretty good I mean this is yeah this looks decent on full screen now if
+52:08
+we go down to you know 700 500 pixels 600 pixels it doesn't look very good so
+52:15
+we do have some stuff to do here we have some media queries too right so the last thing I'm gonna do is the
+52:21
+menu the little hamburger and stuff like that so I want to put it to like between
+52:28
+six and seven hundred pixels we'll try it right there and then we'll go ahead and add our media queries so let's go
+52:36
+down to the very bottom and we're gonna have two media queries one is going to be four screens that are 700 pixels and
+52:43
+below and one will be four screens that are 500 pixels in below so let's say at
+52:48
+media and set a max width of 700 pixels
+52:54
+so any styles we put in here will only be in effect if the screen is 700 pixels
+53:00
+are smaller so let's start off let's start off with the cards the home cards
+53:07
+which is going to be pretty easy because right now we have if we go back up here
+53:13
+to where we have the home cards we have display grid and then our grid template
+53:19
+columns we have four columns right you can see right here four columns I want
+53:24
+to change it to two on 700 pixels and below so I'm gonna just take this grid
+53:30
+template columns and put that right in here and just change this to two 1fr so
+53:39
+if I save that now anything below 700 pixels we're gonna get two columns for
+53:45
+home cards and that's gonna that's going to do the same thing down here alright so home cards is pretty much taken care
+53:52
+of I I do want just one when it's on 500
+53:57
+pixels or less but we'll do that in a minute let's just get this set up first this is basically like a tablet view
+54:03
+so the Xbox this doesn't look too good I think the only thing I want to change here is make it so that there's no
+54:12
+paragraph so it's just Xbox game ultimate and then the button so that's
+54:17
+really easy we can just set the Xbox say Xbox content paragraph and set that to
+54:29
+display:none okay now that still doesn't look too good just because the button is
+54:36
+so close to the text so let's also take the Xbox content h2 and let's add a
+54:47
+margin bottom of 20 pixels all right I think that looks pretty good now let's
+54:55
+see down here we have kind of the same issue going on with with this carbon
+55:01
+instead of taking away the paragraph though I'm just gonna make this this
+55:07
+content stretch out further okay I didn't want to do that here because we won't be able to read the text just away
+55:14
+the way this background image is and you could handle this many different ways you could switch out the image you can
+55:19
+change images based on screen size if you want but I'm gonna go ahead and set the carbon content which I believe is
+55:29
+55% with I'm going to set it to 85 on smaller screens so it looks like that
+55:37
+okay and then let's go down here the links I'm gonna change the the
+55:42
+arrangement of columns here as well so let's say links and then we have links
+55:48
+inner which is where the grid is that's where we did display grid and again we'll just take the grid template
+55:56
+columns and let's repeat instead of having six let's do two one fr-s
+56:02
+like that okay and then for the actually
+56:08
+I think that's it because this I'm just going to leave that footer because it wraps
+56:14
+but yeah that should be good for 700 now if we go smaller I want things to change
+56:22
+up a little bit more for instance the home cards I then want to only have one column so let's add another media query
+56:31
+below this one so we'll go right here and say that media max with 500 pixels
+56:42
+okay and then let's just take this put
+56:50
+that in here and all we need now we don't need any repeats because we're just using one fractional unit and there
+56:55
+we go so now all the cards are just one column as far as the links go I think I
+57:04
+only want to have these in one column that's what the actual Microsoft site does as well so let's take this that
+57:13
+here and same thing change this to one fr and if we take a look now good I do
+57:23
+want to add a little bit of space between all the you ELLs so let's take links links in our ul and just set a
+57:35
+margin bottom to 20 pixels yeah so I
+57:41
+think that looks pretty good looks decent now we can start to work on the menu so to work on the menu I'm
+57:49
+gonna make this a little bigger like that now for the menu button we need to
+57:55
+create that because if we if we go to this to the finished product you can see we have this little button here and we
+58:00
+click that in the menu opens so first thing we'll do is create that button because we don't even have that in our
+58:06
+HTML right now so I'm gonna go up to the top here and the button is going to be
+58:14
+positioned absolute so I'm gonna put it at the very top in the body hope even
+58:19
+above the container and it's just going to be a div with the class of menu - BTN
+58:25
+and inside here we'll have an icon with a class of FA s and then FA - bars and
+58:33
+we want to make it a little bigger so FA - 2 X like that so if I save that it's
+58:42
+just going to be put into the regular flow of the page which we don't want we want to take it out by positioning and
+58:48
+absolute so let's go to our style.css and let's set we'll put this at the top
+58:58
+here we'll just go go right above button
+59:04
+and say menu - BTN and let's set
+59:10
+first of all cursor - pointer so when we hover over it we get a pointer and then we want to position this absolute so if
+59:23
+I do that you can see now it's taken out of the flow of everything else and it's just positioned absolute in the top
+59:29
+corner here now as far as the positioning I'll say from the top let's
+59:34
+move it down a little so we'll say from the top we want to do 20 pixels and then from the right because we actually want
+59:40
+it on the right side we'll set it 30 pixels from the right like that and then
+59:47
+I'm just going to set a z-index so that it's always on top we'll set that to 2
+59:53
+now we obviously don't want this displayed on you know when it's when
+59:59
+it's a large screen and we can actually see the menu items so we're gonna set the display on this to none and then we
+1:00:08
+want it to show when we hit a certain point when we hit the 700 so let's go
+1:00:13
+down to our media query just right here
+1:00:19
+and we'll just put all this stuff at the top here so now our menu button
+1:00:26
+we want to set from display:none - let's say display:block and now it shows
+1:00:34
+because we're at 700 or lower if I go up more you can see it it appears and
+1:00:39
+reappears depending on the screen size so when we're at this size 700 or less
+1:00:46
+we don't want the the main menu to show like at least like this we want it to
+1:00:52
+show like this if this is clicked basically if we put a class of show on
+1:00:58
+it so let's start to style this which is the main menu so we're going to go out
+1:01:05
+here and say actually one thing I want to do is when I hover over the this
+1:01:10
+button here I just want it to fade a little bit so let's just quickly just add menu button hover and just set
+1:01:17
+opacity to 0.5 so that way we just get a little hover effect now for the main
+1:01:25
+menu let's say dot what does it mean nav
+1:01:31
+and then we have a ul with the class of main menu so we have quite a few styles
+1:01:39
+to do here we basically need to turn it from this into this ok so first thing
+1:01:46
+I'm going to do is set the display to
+1:01:51
+block because I believe it's yeah it's flex by default okay and then we're
+1:01:57
+going to position this absolute so basically take it out of the the relative flow position in absolute which
+1:02:05
+is going to put it over there and then set it to top:0 left:0 and and
+1:02:18
+remember it's it's still within the container that's why it's not all the way over to the left but we're going to
+1:02:24
+fix that with the translate X property so let's set the width well actually
+1:02:32
+let's do the background first just so we can kind of see where it begins and ends so background is going to be gray so
+1:02:38
+it's F three times and let's set the width of
+1:02:45
+this to 50% if I save that it's gonna be 50% width and the height I want to be
+1:02:52
+the entire thing so 100% alright so so far so good let's see we want try to
+1:03:04
+think here we don't want this little space right here so we can fix that with
+1:03:09
+transform and then set the translate X so the X access which is horizontal
+1:03:18
+access we want to push it bring it over to the left so we have to do a negative value and we're going to do negative 20
+1:03:25
+pixels so that will clear that little space there now the next thing I want to
+1:03:32
+do is add a border so I'm going to have let's say border on the right of CCC one
+1:03:45
+pixel solid okay just give it a little border I want it to be a little bit
+1:03:50
+see-through so I'm going to set the opacity from 1 to 0.9 which will give it
+1:03:56
+that see-through look let's see and then padding so all around padding of 30
+1:04:04
+pixels which pushes everything in I
+1:04:09
+think that's all I want to do for now now initially this is going to be off
+1:04:15
+screen and I'm not going to set like display:none or anything I'm gonna
+1:04:21
+basically push it over here off the screen and we can do that with the
+1:04:27
+translate X so I wanted to just do this
+1:04:33
+to show you guys so I could actually style it and you could see it but initially this is going to be set to fun
+1:04:39
+negative 500 where it's off the screen and then what's going to happen is if we have a class of show so I'm just going
+1:04:47
+to go down here and set this main nav ul dot
+1:04:52
+main menu and if it has a class of show then we're gonna have a display like we
+1:04:59
+just had it so I'm just gonna paste that and and put this to negative-20 and what's going to happen when we click
+1:05:06
+this button here it's going to toggle that class of show which will bring it from translate X 5 negative 500 which is
+1:05:13
+over here to negative 20 which will bring it to where it just was so what
+1:05:18
+I'm going to do is just physically are high just hard code that show class on
+1:05:24
+to it in the HTML for now so we can see it like that but I'll remove that after
+1:05:30
+and then we'll just add the functionality to click the button but we'll do that just so we can see it so
+1:05:35
+we can finish styling it because these links don't look too good so we're gonna grab let's take this and let's do the LI
+1:05:46
+our allies and just add a padding of 10
+1:05:51
+pixels and then let's do a border bottom of ccc solid one pixel and let's make
+1:06:02
+the font size a little bigger too I'll do let's try 14 yeah now if we if
+1:06:10
+you don't want this bottom border because it doesn't really make sense to have that we can just take this here and
+1:06:17
+we can use a pseudo selector of last child which is just going to take the
+1:06:26
+last list item and set the border bottom to zero save that now we don't have that
+1:06:35
+bottom border anymore now the last thing we want to do in our CSS is see these little icons here the the button is
+1:06:41
+covering it so I want to push those over a little which is very simple so we'll just go up here and that has I believe
+1:06:50
+it has a class of right menu so we'll say main nav ul dot right menu
+1:06:59
+and set a margin right of 50 pixels and
+1:07:04
+save and now it just pushes that over okay and if I make this bigger you can see everything it just goes back to
+1:07:10
+normal so now we need to remove this show class from the HTML because we want
+1:07:16
+to add that dynamically with JavaScript so we'll go down to the bottom all the
+1:07:23
+way down and from here go right above the body tag and just add in a script
+1:07:30
+tag here so we want to select this button here which has a class of menu
+1:07:36
+BTN so let's say document we can use a document object and then use query
+1:07:41
+selector okay so this will select anything in the DOM and we're going to take the element with the class of menu
+1:07:48
+- BTN and then we want to add an event listener so we'll call dot add event
+1:07:55
+listener and this will take in the event we want to listen for which is a click and it also takes in a function I'm just
+1:08:02
+going to use an arrow function here and all we want to happen now is to add that
+1:08:07
+show class to the main menu so we'll select the main menu document dot we'll
+1:08:13
+use query selector here again and we'll take the class of main menu and we're
+1:08:24
+gonna say dot class list I know this is scrunched up but we're gonna take class
+1:08:30
+list which is the property which has all of its classes and then there's a there's methods we can use like add
+1:08:36
+remove and toggle we want to toggle the class of show okay so hopefully that
+1:08:43
+makes sense when we hit the menu button which is this we want to listen for a click OK so as soon as we click it it'll
+1:08:50
+run this function it'll select the main menu which is that whole menu that we just styled that's not showing right now
+1:08:58
+because it's off the screen and it'll add the class of show and as soon as that happens when that show class is
+1:09:05
+added it goes from translate X negative 500 which pushes it off the screen to
+1:09:11
+negative 20 pixels which puts it in that position where it shows so I'm gonna just go
+1:09:17
+ahead and reload and I'm gonna hit that and now it shows so one thing that I
+1:09:22
+actually forgot to do when the CSS was at a transition because I don't want it to just pop up like that I wanted to
+1:09:28
+transition into it slowly so it gives it that slide effect so in our CSS we just
+1:09:35
+need to add one line to this this main menu right here so right under the transform let's add a transition and it
+1:09:44
+needs to know what property do we want to add the transition on and that's going to be the transform okay because
+1:09:50
+the transform is what changes this translate X value and then the time it
+1:09:55
+takes let's say 0.5 seconds and then the effect which we'll use ease in out so
+1:10:02
+now if I go ahead and I click this now it slides in it has a transition okay so
+1:10:08
+it has kind of this animation instead of just popping in which makes it look much nicer alright so that's it so this is
+1:10:15
+what it looks like fullscreen which looks pretty good and
+1:10:20
+then we get down to 700 pixels and the menu goes away up here this gets pushed
+1:10:27
+over this gets disappears and then we can go ahead and open the menu and then
+1:10:33
+if it's even smaller you know these all stack up so these are all one column and the menu still works so it comes out to
+1:10:40
+50% regardless of the size of the screen so that's it guys hopefully you enjoyed
+1:10:46
+this little project here and you learned a little bit more about CSS or even HTML
+1:10:52
+but that's it thanks for watching I really appreciate it and I'll see you in the next video
+
+
