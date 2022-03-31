@@ -18,4 +18,68 @@ Timestamps:
 
 ## Tracking
 
+- 21:33, 
+
+```
+
+.slider-container {
+  position: relative; <-------------- set as "relative"!!! because will set everything inside it as "absolute"
+  overflow: hidden;
+  width: 100vw; <------------------- take whole width
+  height: 100vh;
+}
+
+.left-slide {
+  height: 100%;
+  width: 35%;
+  position: absolute; <-------------------- using "absolute"
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+```
+
+- 22:41, moving around for immidiate div
+
+```
+.left-slide > div {
+  height: 100%;
+  width: 100%;
+  display: flex;  <-------------------- 
+  flex-direction: column;  <-------------------- 
+  align-items: center;  <-------------------- 
+  justify-content: center;  <-------------------- 
+  color: #fff;
+}
+```
+
+- 27:23, separate button up and down 
+
+```
+.slider-container .action-buttons button {
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  z-index: 100;
+}
+
+.slider-container .action-buttons .down-button {
+  transform: translateX(-100%); <------------------- Using "translateX" to move horizontally!!!
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.slider-container .action-buttons .up-button {
+  transform: translateY(-100%); <------------------- Using "translateY" to move vertically!!!
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+```
+
+
+
+
+
 
