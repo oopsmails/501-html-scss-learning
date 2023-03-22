@@ -1,0 +1,36 @@
+.red {
+    background-color: red;
+    width: 300px;
+    height: 100px;
+    margin-top: 30px;
+}
+
+.blue {
+    background-color: blue;
+    // below not working for inline elements
+    width: 300px;
+    height: 100px;
+    margin-top: 30px;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+.display-none {
+    // will release its space
+    display: none;
+}
+
+.v-hidden {
+    // will not release its space
+    visibility: hidden;
+}
