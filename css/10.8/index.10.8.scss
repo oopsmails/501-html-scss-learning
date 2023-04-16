@@ -48,6 +48,7 @@ header::after {
   padding: 0;
   list-style: none;
 }
+
 .primary-navigation[data-state='opened'] {
   animation: clipPathCircleOpen 750ms ease-in-out forwards;
   display: block;
@@ -56,6 +57,7 @@ header::after {
 .primary-navigation[data-state='closing'] {
   animation: clipPathCircleClose 750ms ease-in-out forwards;
 }
+
 .primary-navigation[data-state='closed'] {
   display: none;
 }
@@ -64,14 +66,17 @@ header::after {
   0% {
     clip-path: circle(0% at top right);
   }
+
   100% {
     clip-path: circle(250% at top right);
   }
 }
+
 @keyframes clipPathCircleClose {
   0% {
     clip-path: circle(250% at top right);
   }
+
   100% {
     clip-path: circle(0% at top right);
   }
@@ -158,4 +163,14 @@ header::after {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+// ---------- Test Around ------------- 
+
+.clip-path-example {
+  width: 200px;
+  height: 200px;
+  background-color: #f00;
+  -webkit-clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }

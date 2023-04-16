@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10.8 Mobile Nav</title>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-KJSk9oY0W0aE1v7eiRlwtwRZl/Vnmt63lvxvjl1q3I31XeeAvfPKoQ8tT7TtkoQ2Z4/qcJjS1FKUnfKlgUCbGw=="
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="../../css/10.8/index.10.8.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Generico<span>Logo</span></h1>
+
+        <nav class="site-nav">
+          <button class="menu-toggle" aria-controls="primary-navigation" aria-expanded="false">
+            <span class="visually-hidden">Menu</span>
+            <div class="hamburger" aria-hidden="true"></div>
+          </button>
+
+          <ul data-state="closed" class="primary-navigation" id="primary-navigation">
+            <li>
+              <a href=""><i class="fa fa-home site-nav--icon"></i>Home</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-info site-nav--icon"></i>About</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-pencil site-nav--icon"></i>Blog</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-usd site-nav--icon"></i>Pricing</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-envelope site-nav--icon"></i>Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section>
+      <div class="content">
+        <div class="clip-path-example"></div>
+        <div>
+          In this example, we create a div element with a class of clip-path-example. We set the width and height to 200
+          pixels, and the background color to red. Then, we use the clip-path property to create a polygon shape. The
+          polygon() function takes a series of x and y coordinates as arguments, separated by spaces. Each pair of
+          coordinates represents a point on the polygon. In this example, we use four points to create a diamond shape.
+          The 50% 0 coordinate represents the top point of the diamond, 100% 50% represents the right point, 50% 100%
+          represents the bottom point, and 0 50% represents the left point. The -webkit-clip-path property is included
+          for compatibility with older versions of WebKit-based browsers, such as Safari. When you view the HTML file in
+          a web browser, you should see a red diamond-shaped element with a white background (assuming no other styles
+          are applied).
+        </div>
+      </div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
