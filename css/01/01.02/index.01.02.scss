@@ -1,0 +1,24 @@
+@property --colorOne {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: blue;
+}
+
+@property --colorTwo {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: purple;
+}
+
+.gradient-box {
+    height: 50vh;
+    background-image: linear-gradient(90deg, var(--colorOne), var(--colorTwo));
+    background-position: 100%;
+
+    transition: --colorOne 500ms, --colorTwo 1500ms;
+}
+
+.gradient-box:hover {
+    --colorOne: red;
+    --colorTwo: #0f0;
+}
