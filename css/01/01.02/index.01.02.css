@@ -3,13 +3,11 @@
   inherits: false;
   initial-value: blue;
 }
-
 @property --colorTwo {
   syntax: "<color>";
   inherits: true;
   initial-value: purple;
 }
-
 .gradient-box {
   height: 50vh;
   background-image: -webkit-gradient(linear, left top, right top, from(var(--colorOne)), to(var(--colorTwo)));
@@ -22,4 +20,3 @@
   --colorOne: red;
   --colorTwo: #0f0;
 }
-/*# sourceMappingURL=index.01.02.css.map */
