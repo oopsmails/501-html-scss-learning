@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --primary-color: #f8b281;
+    --secondary-color: #1b1b1b;
+}
+
+.wrapper {
+    width: min(900px, 100% - 3rem); // why compilatin error? updated to new Live Scss Compiler
+    margin-inline: auto;
+}
+
+.quick-example {
+    margin: 1rem;
+    padding: 1rem;
+    background: hsl(200 50% 50% / .4);
+    border-radius: .5rem;
+
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+}
+
+.quick-example>div {
+    overflow: hidden;
+}
+
+.quick-example:hover {
+    grid-template-rows: 1fr;
+}
