@@ -37,3 +37,42 @@ html {
 .quick-example:hover {
     grid-template-rows: 1fr;
 }
+
+//-----------------------------------------------
+
+.parent {
+    width: 500px;
+    height: 200px;
+    background-color: gray;
+}
+
+.child {
+    width: 100%;
+    height: 100px;
+    background-color: blue;
+}
+
+// .parent {
+//     width: 500px;
+//     height: 200px;
+//     background-color: gray;
+// }
+
+// .child {
+//     width: inherit;
+//     height: 100px;
+//     background-color: blue;
+// }
+
+
+// .parent {
+//     width: 500px;
+//     height: 200px;
+//     background-color: gray;
+//     display: flex;
+// }
+
+// .child {
+//     height: 100px;
+//     background-color: blue;
+// }
