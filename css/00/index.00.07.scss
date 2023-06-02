@@ -25,6 +25,10 @@ body {
     font-size: 1.125rem;
 }
 
+.wrapper>* {
+    margin-block-start: 1em;
+}
+
 img {
     display: block;
     max-width: 100%;
