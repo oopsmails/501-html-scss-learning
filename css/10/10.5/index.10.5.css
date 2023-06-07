@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,600");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/* 00: Basic setup */
+:root {
+  --nav-background: rgba(0, 214, 170, .85);
+  --hamburger-margin-left: 1em;
+  --nav-item-margin-bottom: 1em;
+  --nav-a-font-size: 1.2rem;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  --background: rgba(0, 214, 170, .85);
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+}
+
+.content {
+  height: 200vh;
+  background-image: url(//unsplash.it/1000/1000);
+  background-color: #333;
+  background-blend-mode: multiply;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+
+/* 01: Navigation Style Starts Here */
+header {
+  background: var(--nav-background);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: var(--hamburger-margin-left);
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background-color: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--nav-background);
+  width: 100%;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  margin-bottom: var(--nav-item-margin-bottom);
+  margin-left: var(--hamburger-margin-left);
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: var(--nav-a-font-size);
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+}
+nav a:hover {
+  color: #000;
+}
+
+.nav-toggle:checked ~ nav {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  -webkit-transition: opacity 250ms ease-in-out 250ms;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+.goto-toggle {
+  display: none;
+}
+
+.navbar-goto-li {
+  margin-bottom: var(--nav-item-margin-bottom);
+  margin-left: var(--hamburger-margin-left);
+  font-size: var(--nav-a-font-size);
+  text-align: left;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+.navbar-goto-li .goto-toggle-label {
+  color: white;
+}
+.navbar-goto-li .navbar-goto-li-angle-down {
+  color: white;
+  margin-left: 10px;
+}
+.navbar-goto-li .navbar-goto-li-ul {
+  margin-top: var(--nav-item-margin-bottom);
+  padding: 0;
+  list-style: none;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  display: none;
+}
+.navbar-goto-li li {
+  margin-bottom: var(--nav-item-margin-bottom);
+  margin-left: var(--hamburger-margin-left);
+}
+.navbar-goto-li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  opacity: 0;
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+}
+.navbar-goto-li a:hover {
+  color: #000;
+}
+
+.goto-toggle:checked ~ ul {
+  display: block;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 0.5fr auto minmax(600px, 1fr) 0.75fr;
+  }
+  .logo {
+    grid-column: 2/span 1;
+  }
+  nav {
+    all: unset;
+    /* the following lines are not from my video, but add Edge support */
+    position: relative;
+    text-align: left;
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support stuff */
+    grid-column: 3/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border: 1px solid red;
+  }
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+  nav a::before {
+    content: "";
+    display: block;
+    height: 5px;
+    background-color: black;
+    position: absolute;
+    /* top: -.75em; */
+    bottom: -0.75em;
+    left: 0;
+    right: 0;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transition: -webkit-transform ease-in-out 250ms;
+    transition: -webkit-transform ease-in-out 250ms;
+    transition: transform ease-in-out 250ms;
+    transition: transform ease-in-out 250ms, -webkit-transform ease-in-out 250ms;
+  }
+  nav a:hover:before {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  .goto-toggle-label {
+    color: white;
+    text-decoration: none;
+    font-size: var(--nav-a-font-size);
+    text-transform: uppercase;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  nav ul li .navbar-goto-li-ul {
+    all: unset;
+    position: absolute;
+    text-align: right;
+    background-color: var(--nav-background);
+    position: absolute;
+    right: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    white-space: nowrap;
+    width: auto;
+    text-align: right;
+    -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    -webkit-transition: -webkit-transform 2500ms ease-in-out;
+    transition: -webkit-transform 2500ms ease-in-out;
+    transition: transform 2500ms ease-in-out;
+    transition: transform 2500ms ease-in-out, -webkit-transform 2500ms ease-in-out;
+    display: none;
+  }
+  nav ul li .navbar-goto-li-ul li {
+    margin-right: 1em;
+  }
+  nav ul li .navbar-goto-li-ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    opacity: 1;
+    -webkit-transition: opacity 150ms ease-in-out;
+    transition: opacity 150ms ease-in-out;
+  }
+  .goto-toggle:checked ~ ul {
+    display: block;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
